@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/resultLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizResultActivity"
+    android:background="@drawable/success_bg"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bgTextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/bgText"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/success_bg_for_text"/>
+
+        <TextView
+            android:id="@+id/txtYourScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="YOUR SCORE"
+            app:layout_constraintBottom_toBottomOf="@+id/bgText"
+            app:layout_constraintEnd_toEndOf="@+id/bgText"
+            app:layout_constraintStart_toStartOf="@+id/bgText"
+            app:layout_constraintTop_toTopOf="@+id/bgText"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="6"
+            android:textSize="35dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bgText"
+            app:layout_constraintEnd_toEndOf="@+id/bgText"
+            app:layout_constraintStart_toStartOf="@+id/bgText"
+            app:layout_constraintTop_toTopOf="@+id/bgText"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:id="@+id/txtTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="out of 6"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtScore"
+            app:layout_constraintEnd_toEndOf="@+id/txtScore"
+            app:layout_constraintStart_toStartOf="@+id/txtScore"
+            app:layout_constraintTop_toTopOf="@+id/txtScore"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_medium"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/imageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/bgTextLayout"
+        android:layout_marginTop="-50dp">
+
+        <ImageView
+            android:id="@+id/bgImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/success_image" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLayout"
+        android:gravity="center"
+        android:layout_marginTop="-30dp">
+
+        <Button
+            android:id="@+id/btnBackHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Home"
+            android:background="@drawable/round_shape_btn_white"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/montserrat_medium"/>
+    </LinearLayout>
+
+</RelativeLayout>

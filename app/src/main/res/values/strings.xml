@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Mother Tongue</string>
+    <string name="app_name_2">Mobile Mother Tongue-Based Multilingual Education Application</string>
+
+    <string name="english">English</string>
+    <string name="english_in_bisaya">Ingles</string>
+
+    <string name="good_morning">Good Morning</string>
+    <string name="good_morning_in_bisaya">Maayong Buntag</string>
+
+    <string name="reading_drills">Reading Drills</string>
+    <string name="reading_drills_in_bisaya">Reading Drills</string>
+
+    <string name="lessons">Lessons</string>
+    <string name="lessons_in_bisaya">Lessons</string>
+
+    <string name="quiz">Quiz</string>
+    <string name="quiz_in_bisaya">Quiz</string>
+</resources>

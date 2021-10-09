@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.27239583333333334" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/baseline_campaign_white_24dp.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/baseline_chevron_left_black_36dp.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/baseline_chevron_left_green_800_24dp.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/baseline_search_white_24dp.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/custom_radio_button.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/round_button.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/round_shape_btn.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/round_shape_btn_white.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/searchview_background.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/text_input_box_stroke.xml" value="0.211" />
+        <entry key="app/src/main/res/font/font.xml" value="0.2760416666666667" />
+        <entry key="app/src/main/res/layout/activity_lesson_result.xml" value="0.2556038455686708" />
+        <entry key="app/src/main/res/layout/activity_lessons.xml" value="0.2539154052734375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.17692413330078122" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20332641601562498" />
+        <entry key="app/src/main/res/layout/activity_paragraph_list.xml" value="0.21653594970703127" />
+        <entry key="app/src/main/res/layout/activity_paragraph_result.xml" value="0.2775917606077332" />
+        <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.21007385253906252" />
+        <entry key="app/src/main/res/layout/activity_quiz_result.xml" value="0.30217132568359373" />
+        <entry key="app/src/main/res/layout/activity_reading_drills.xml" value="0.2820061282835145" />
+        <entry key="app/src/main/res/layout/activity_reading_drills_list.xml" value="0.2006340579710145" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_start.xml" value="0.20334320068359377" />
+        <entry key="app/src/main/res/layout/activity_words_list.xml" value="0.2006340579710145" />
+        <entry key="app/src/main/res/layout/lesson_description_layout.xml" value="0.28338599571814904" />
+        <entry key="app/src/main/res/layout/lesson_list_layout.xml" value="0.17694091796875" />
+        <entry key="app/src/main/res/layout/lesson_result_layout.xml" value="0.301711328478827" />
+        <entry key="app/src/main/res/layout/paragraph_list_layout.xml" value="0.2006340579710145" />
+        <entry key="app/src/main/res/layout/paragraph_result_layout.xml" value="0.2006340579710145" />
+        <entry key="app/src/main/res/layout/words_list_layout.xml" value="0.2006340579710145" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
