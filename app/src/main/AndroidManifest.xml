@@ -68,6 +68,8 @@
             android:name=".ParagraphResultActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <service android:name=".Services.BackgroundMusicService" android:stopWithTask="true"/>
     </application>
 
 </manifest>

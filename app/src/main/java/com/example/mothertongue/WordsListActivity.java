@@ -3,6 +3,7 @@ package com.example.mothertongue;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
@@ -22,6 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mothertongue.Models.Word;
+import com.example.mothertongue.Services.BackgroundMusicService;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseError;
@@ -54,11 +56,13 @@ public class WordsListActivity extends AppCompatActivity {
         wordList.setHasFixedSize(true);
         wordList.setLayoutManager(new LinearLayoutManager(this));
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.btn_sound);
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setTransformationMethod(null);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent myIntent = new Intent(WordsListActivity.this, ReadingDrillsActivity.class);
                 startActivity(myIntent);
             }
@@ -196,4 +200,21 @@ public class WordsListActivity extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PAUSE");
+        startService(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PLAY");
+        startService(intent);
+    }
 }

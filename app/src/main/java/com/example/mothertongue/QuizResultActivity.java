@@ -2,6 +2,7 @@ package com.example.mothertongue;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mothertongue.Models.UserLessonQuiz;
+import com.example.mothertongue.Services.BackgroundMusicService;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -37,6 +39,9 @@ public class QuizResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_result);
 
+        // stop bg music to hear pass or fail sound
+        stopService(new Intent(this, BackgroundMusicService.class));
+
         bgLayout = (RelativeLayout) findViewById(R.id.resultLayout);
         txtScore = (TextView) findViewById(R.id.txtScore);
         txtTotal = (TextView) findViewById(R.id.txtTotal);
@@ -55,15 +60,20 @@ public class QuizResultActivity extends AppCompatActivity {
         txtTotal.setText("out of " + total);
         txtScore.setText(correct.toString());
 
+        final MediaPlayer win_sound = MediaPlayer.create(this, R.raw.win_sound);
+        final MediaPlayer fail_sound = MediaPlayer.create(this, R.raw.fail_sound);
+
         String uri;
 
         // assume a total of 6 quizzes, 4 is passing
         if (correct >= 4) {
+            win_sound.start();
             bgLayout.setBackground(getDrawable(R.drawable.success_bg));
             bgText.setBackground(getDrawable(R.drawable.success_bg_for_text));
 
             uri = "@drawable/success_image";
         } else {
+            fail_sound.start();
             bgLayout.setBackground(getDrawable(R.drawable.fail_bg));
             bgText.setBackground(getDrawable(R.drawable.fail_bg_for_text));
 
@@ -73,11 +83,15 @@ public class QuizResultActivity extends AppCompatActivity {
         int imageResource = getResources().getIdentifier(uri, null, getPackageName());
         bgImage.setImageDrawable(getResources().getDrawable(imageResource));
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.btn_sound);
+
         btnBackHome = (Button) findViewById(R.id.btnBackHome);
         btnBackHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent intent = new Intent(QuizResultActivity.this, MainActivity.class);
+                intent.putExtra("startMusic", "true");
                 startActivity(intent);
             }
         });

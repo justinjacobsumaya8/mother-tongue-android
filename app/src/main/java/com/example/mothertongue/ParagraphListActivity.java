@@ -2,6 +2,7 @@ package com.example.mothertongue;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.mothertongue.Models.Paragraph;
 import com.example.mothertongue.Models.Word;
+import com.example.mothertongue.Services.BackgroundMusicService;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseError;
@@ -49,11 +51,13 @@ public class ParagraphListActivity extends AppCompatActivity {
         paragraphList.setHasFixedSize(true);
         paragraphList.setLayoutManager(layoutManager);
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.btn_sound);
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setTransformationMethod(null);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent myIntent = new Intent(ParagraphListActivity.this, ReadingDrillsActivity.class);
                 startActivity(myIntent);
             }
@@ -109,6 +113,7 @@ public class ParagraphListActivity extends AppCompatActivity {
 
     public class ParagraphsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         View view;
+        final MediaPlayer mp = MediaPlayer.create(ParagraphListActivity.this, R.raw.btn_sound);
 
         public ParagraphsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -126,9 +131,27 @@ public class ParagraphListActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
+            mp.start();
             Intent intent = new Intent(ParagraphListActivity.this, ParagraphResultActivity.class);
             intent.putExtra("paragraphId", (Integer) view.getTag(R.id.paragraphId));
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PAUSE");
+        startService(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PLAY");
+        startService(intent);
     }
 }

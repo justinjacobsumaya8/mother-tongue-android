@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mothertongue.Models.LessonDetail;
+import com.example.mothertongue.Services.BackgroundMusicService;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -49,11 +51,13 @@ public class LessonsResultActivity extends AppCompatActivity {
 
         lessonDetailDatabase = FirebaseDatabase.getInstance().getReference("lesson_details");
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.btn_sound);
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setTransformationMethod(null);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent myIntent = new Intent(LessonsResultActivity.this, LessonsActivity.class);
                 LessonsResultActivity.this.startActivity(myIntent);
             }
@@ -180,10 +184,12 @@ public class LessonsResultActivity extends AppCompatActivity {
             txtBody3Card3Example.setText(lessonDetail.getD3_example_3());
             // End Detail 3
 
+            final MediaPlayer mp = MediaPlayer.create(view.getContext(), R.raw.btn_sound);
             Button btnTakeQuiz = (Button) view.findViewById(R.id.btnTakeQuiz);
             btnTakeQuiz.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    mp.start();
                     Intent intent = new Intent(LessonsResultActivity.this, QuizActivity.class);
                     intent.putExtra("lessonId", lessonId);
                     intent.putExtra("lessonName", lessonName);
@@ -191,5 +197,22 @@ public class LessonsResultActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PAUSE");
+        startService(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PLAY");
+        startService(intent);
     }
 }

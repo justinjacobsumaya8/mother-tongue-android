@@ -3,6 +3,7 @@ package com.example.mothertongue;
 import android.app.ProgressDialog;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mothertongue.Models.Lesson;
+import com.example.mothertongue.Services.BackgroundMusicService;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseError;
@@ -43,6 +45,8 @@ public class LessonsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.btn_sound);
+
         lessonDatabase = FirebaseDatabase.getInstance().getReference("lessons");
 
         lessonList = (RecyclerView) findViewById(R.id.lessonList);
@@ -54,6 +58,8 @@ public class LessonsActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
+
                 Intent myIntent = new Intent(LessonsActivity.this, MainActivity.class);
                 LessonsActivity.this.startActivity(myIntent);
             }
@@ -137,7 +143,7 @@ public class LessonsActivity extends AppCompatActivity {
 
     public class LessonsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         View view;
-
+        final MediaPlayer mp = MediaPlayer.create(LessonsActivity.this, R.raw.btn_sound);
         public LessonsViewHolder(@NonNull View itemView) {
             super(itemView);
             view = itemView;
@@ -154,6 +160,7 @@ public class LessonsActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
+            mp.start();
             Intent intent = new Intent(LessonsActivity.this, LessonsResultActivity.class);
             intent.putExtra("lessonId", (Integer) view.getTag(R.id.lessonId));
             intent.putExtra("lessonName", String.valueOf(view.getTag(R.id.lessonName)));
@@ -181,5 +188,22 @@ public class LessonsActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         firebaseRecyclerAdapter.stopListening();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PAUSE");
+        startService(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PLAY");
+        startService(intent);
     }
 }

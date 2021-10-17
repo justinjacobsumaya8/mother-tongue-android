@@ -7,19 +7,25 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Html;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 
 import com.example.mothertongue.Models.Quiz;
+import com.example.mothertongue.Services.BackgroundMusicService;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -67,11 +73,13 @@ public class QuizActivity extends AppCompatActivity {
             lessonName = intent.getStringExtra("lessonName");
         }
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.btn_sound);
         Button btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setTransformationMethod(null);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 if (lessonId == 0) {
                     Intent intent = new Intent(QuizActivity.this, MainActivity.class);
                     startActivity(intent);
@@ -173,16 +181,21 @@ public class QuizActivity extends AppCompatActivity {
                     if (snapshot.exists())
                     {
                         final Quiz quiz = snapshot.getValue(Quiz.class);
+                        
+                        String question = total + ". " + quiz.getQuestion();
+                        txtQuestion.setText(Html.fromHtml(question));
 
-                        txtQuestion.setText(total + ". " + quiz.getQuestion());
                         btnChoice1.setText(quiz.getChoice_1());
                         btnChoice2.setText(quiz.getChoice_2());
                         btnChoice3.setText(quiz.getChoice_3());
                         btnChoice4.setText(quiz.getChoice_4());
 
+                        final MediaPlayer mp = MediaPlayer.create(QuizActivity.this, R.raw.btn_sound);
                         btnChoice1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
+                                mp.start();
+
                                 btnChoice2.setEnabled(false);
                                 btnChoice3.setEnabled(false);
                                 btnChoice4.setEnabled(false);
@@ -191,6 +204,10 @@ public class QuizActivity extends AppCompatActivity {
                                 {
                                     btnChoice1.setBackgroundColor(Color.parseColor("#57A35D"));
                                     btnChoice1.setTextColor(Color.WHITE);
+                                    // happy smiley
+                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude01"), Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
 
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
@@ -214,6 +231,10 @@ public class QuizActivity extends AppCompatActivity {
 
                                     btnChoice1.setBackgroundColor(Color.parseColor("#BA3F37"));
                                     btnChoice1.setTextColor(Color.WHITE);
+                                    // sad smiley
+                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude1e"), Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
 
                                     if (btnChoice2.getText().toString().equals(quiz.getCorrect_answer()))
                                     {
@@ -255,6 +276,8 @@ public class QuizActivity extends AppCompatActivity {
                         btnChoice2.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
+                                mp.start();
+
                                 btnChoice1.setEnabled(false);
                                 btnChoice3.setEnabled(false);
                                 btnChoice4.setEnabled(false);
@@ -263,6 +286,10 @@ public class QuizActivity extends AppCompatActivity {
                                 {
                                     btnChoice2.setBackgroundColor(Color.parseColor("#57A35D"));
                                     btnChoice2.setTextColor(Color.WHITE);
+                                    // happy smiley
+                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude01"), Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
 
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
@@ -286,6 +313,10 @@ public class QuizActivity extends AppCompatActivity {
 
                                     btnChoice2.setBackgroundColor(Color.parseColor("#BA3F37"));
                                     btnChoice2.setTextColor(Color.WHITE);
+                                    // happy smiley
+                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude1e"), Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
 
                                     if (btnChoice1.getText().toString().equals(quiz.getCorrect_answer()))
                                     {
@@ -327,6 +358,8 @@ public class QuizActivity extends AppCompatActivity {
                         btnChoice3.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
+                                mp.start();
+
                                 btnChoice1.setEnabled(false);
                                 btnChoice2.setEnabled(false);
                                 btnChoice4.setEnabled(false);
@@ -335,6 +368,10 @@ public class QuizActivity extends AppCompatActivity {
                                 {
                                     btnChoice3.setBackgroundColor(Color.parseColor("#57A35D"));
                                     btnChoice3.setTextColor(Color.WHITE);
+                                    // happy smiley
+                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude01"), Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
 
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
@@ -358,6 +395,10 @@ public class QuizActivity extends AppCompatActivity {
 
                                     btnChoice3.setBackgroundColor(Color.parseColor("#BA3F37"));
                                     btnChoice3.setTextColor(Color.WHITE);
+                                    // sad smiley
+                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude1e"), Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
 
                                     if (btnChoice1.getText().toString().equals(quiz.getCorrect_answer()))
                                     {
@@ -399,6 +440,8 @@ public class QuizActivity extends AppCompatActivity {
                         btnChoice4.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
+                                mp.start();
+
                                 btnChoice1.setEnabled(false);
                                 btnChoice2.setEnabled(false);
                                 btnChoice3.setEnabled(false);
@@ -407,6 +450,10 @@ public class QuizActivity extends AppCompatActivity {
                                 {
                                     btnChoice4.setBackgroundColor(Color.parseColor("#57A35D"));
                                     btnChoice4.setTextColor(Color.WHITE);
+                                    // happy smiley
+                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude01"), Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
 
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
@@ -430,6 +477,10 @@ public class QuizActivity extends AppCompatActivity {
 
                                     btnChoice4.setBackgroundColor(Color.parseColor("#BA3F37"));
                                     btnChoice4.setTextColor(Color.WHITE);
+                                    // sad smiley
+                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude1e"), Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.show();
 
                                     if (btnChoice1.getText().toString().equals(quiz.getCorrect_answer()))
                                     {
@@ -476,5 +527,22 @@ public class QuizActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PAUSE");
+        startService(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PLAY");
+        startService(intent);
     }
 }

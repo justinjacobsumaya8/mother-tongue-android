@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.mothertongue.Models.User;
+import com.example.mothertongue.Services.BackgroundMusicService;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,11 +50,13 @@ public class LoginActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imageGif);
         Glide.with(this).asGif().load(R.drawable.login).into(imageView);
 
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.btn_sound);
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setTransformationMethod(null);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent myIntent = new Intent(LoginActivity.this, StartActivity.class);
                 LoginActivity.this.startActivity(myIntent);
             }
@@ -92,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
 
                 String firstName = txtFirstName.getEditText().getText().toString();
                 String lastName = txtLastName.getEditText().getText().toString();
@@ -122,5 +127,22 @@ public class LoginActivity extends AppCompatActivity {
         } catch(Exception e) {
             return "date";
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PAUSE");
+        startService(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PLAY");
+        startService(intent);
     }
 }

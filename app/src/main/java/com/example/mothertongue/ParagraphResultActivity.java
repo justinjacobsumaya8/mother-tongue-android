@@ -3,6 +3,7 @@ package com.example.mothertongue;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.mothertongue.Models.LessonDetail;
 import com.example.mothertongue.Models.Paragraph;
+import com.example.mothertongue.Services.BackgroundMusicService;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +32,6 @@ import com.google.firebase.database.Query;
 
 public class ParagraphResultActivity extends AppCompatActivity {
 
-    private Button btnBack;
     private RecyclerView paragraphDetail;
 
     private DatabaseReference paragraphDatabase;
@@ -108,11 +109,14 @@ public class ParagraphResultActivity extends AppCompatActivity {
         @SuppressLint("SetTextI18n")
         public void setDetails(Paragraph paragraph) {
 
+            final MediaPlayer mp = MediaPlayer.create(view.getContext(), R.raw.btn_sound);
+
             Button btnBack = (Button) view.findViewById(R.id.btnBack);
             btnBack.setTransformationMethod(null);
             btnBack.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    mp.start();
                     Intent myIntent = new Intent(ParagraphResultActivity.this, ParagraphListActivity.class);
                     startActivity(myIntent);
                 }
@@ -126,6 +130,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
             btnChangeLanguage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    mp.start();
                     Button b = (Button)v;
                     String buttonText = b.getText().toString();
 
@@ -217,5 +222,22 @@ public class ParagraphResultActivity extends AppCompatActivity {
             txtDiscussSentence4.setText("4. " + paragraph.getDiscuss_sentence_4_english());
             txtDiscussSentence5.setText("5. " + paragraph.getDiscuss_sentence_5_english());
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PAUSE");
+        startService(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = new Intent(this, BackgroundMusicService.class);
+        intent.setAction("ACTION_PLAY");
+        startService(intent);
     }
 }
