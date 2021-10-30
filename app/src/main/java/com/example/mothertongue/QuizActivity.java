@@ -15,7 +15,10 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,8 +45,11 @@ import java.util.stream.Collectors;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private TextView txtQuestion, txtTitle, txtSecondTitle;
+    private TextView txtQuestion, txtTitle, txtSecondTitle, txtEmoji;
     private RadioButton btnChoice1, btnChoice2, btnChoice3, btnChoice4;
+    private ImageView imageEmoji;
+    private RelativeLayout bodyLayout;
+    private LinearLayout emojiLayout;
 
     DatabaseReference reference;
 
@@ -53,11 +59,12 @@ public class QuizActivity extends AppCompatActivity {
     int totalChild = 0;
 
     int arrIndex = 0;
-    int max = 7;
-    List<Integer> indices = new ArrayList<Integer>(max);
+    int max = 13;
 
     private Integer lessonId = 0;
     private String lessonName;
+
+    List<Integer> indices;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -80,15 +87,15 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mp.start();
+                Intent intent;
                 if (lessonId == 0) {
-                    Intent intent = new Intent(QuizActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    intent = new Intent(QuizActivity.this, MainActivity.class);
                 } else {
-                    Intent intent = new Intent(QuizActivity.this, LessonsResultActivity.class);
+                    intent = new Intent(QuizActivity.this, LessonsResultActivity.class);
                     intent.putExtra("lessonId", lessonId);
                     intent.putExtra("lessonName", lessonName);
-                    startActivity(intent);
                 }
+                startActivity(intent);
             }
         });
 
@@ -99,6 +106,11 @@ public class QuizActivity extends AppCompatActivity {
 
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         txtSecondTitle = (TextView) findViewById(R.id.txtSecondTitle);
+
+        txtEmoji = (TextView) findViewById(R.id.txtEmoji);
+        imageEmoji = (ImageView) findViewById(R.id.imageEmoji);
+        bodyLayout = (RelativeLayout) findViewById(R.id.bodyLayout);
+        emojiLayout = (LinearLayout) findViewById(R.id.emojiLayout);
 
         DatabaseReference ref;
 
@@ -120,8 +132,9 @@ public class QuizActivity extends AppCompatActivity {
 
             }
         });
-
-
+        Log.i("totalChild", String.valueOf(totalChild));
+        // Can't get totalChild of quizzes table - will use static max for now
+        indices = new ArrayList<Integer>(max);
         for(int c = 1; c < max; ++c)
         {
             indices.add(c);
@@ -140,6 +153,8 @@ public class QuizActivity extends AppCompatActivity {
         btnChoice3.setTextColor(Color.BLACK);
         btnChoice4.setTextColor(Color.BLACK);
 
+        bodyLayout.setAlpha(1);
+        emojiLayout.setAlpha(0);
 
         if (total > 0)
         {
@@ -192,22 +207,28 @@ public class QuizActivity extends AppCompatActivity {
 
                         final MediaPlayer mp = MediaPlayer.create(QuizActivity.this, R.raw.btn_sound);
                         btnChoice1.setOnClickListener(new View.OnClickListener() {
+                            @SuppressLint("UseCompatLoadingForDrawables")
                             @Override
                             public void onClick(View view) {
                                 mp.start();
 
+                                btnChoice1.setEnabled(false);
                                 btnChoice2.setEnabled(false);
                                 btnChoice3.setEnabled(false);
                                 btnChoice4.setEnabled(false);
 
                                 if (btnChoice1.getText().toString().equals(quiz.getCorrect_answer()))
                                 {
-                                    btnChoice1.setBackgroundColor(Color.parseColor("#57A35D"));
-                                    btnChoice1.setTextColor(Color.WHITE);
-                                    // happy smiley
-                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude01"), Toast.LENGTH_LONG);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.show();
+//                                    btnChoice1.setBackgroundColor(Color.parseColor("#57A35D"));
+//                                    btnChoice1.setTextColor(Color.WHITE);
+
+//                                    txtEmoji.setText("Great!");
+                                    txtEmoji.setTextColor(Color.GREEN);
+                                    bodyLayout.setAlpha((float) 0.3);
+                                    emojiLayout.setAlpha(1);
+                                    String uri = "@drawable/happy";
+                                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                                    imageEmoji.setImageDrawable(getResources().getDrawable(imageResource));
 
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
@@ -217,6 +238,7 @@ public class QuizActivity extends AppCompatActivity {
                                             correct++;
                                             btnChoice1.setBackground(getDrawable(R.drawable.custom_radio_button));
 
+                                            btnChoice1.setEnabled(true);
                                             btnChoice2.setEnabled(true);
                                             btnChoice3.setEnabled(true);
                                             btnChoice4.setEnabled(true);
@@ -229,12 +251,16 @@ public class QuizActivity extends AppCompatActivity {
                                 {
                                     wrong++;
 
-                                    btnChoice1.setBackgroundColor(Color.parseColor("#BA3F37"));
-                                    btnChoice1.setTextColor(Color.WHITE);
-                                    // sad smiley
-                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude1e"), Toast.LENGTH_LONG);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.show();
+//                                    btnChoice1.setBackgroundColor(Color.parseColor("#BA3F37"));
+//                                    btnChoice1.setTextColor(Color.WHITE);
+
+//                                    txtEmoji.setText("Sorry Wrong...");
+                                    txtEmoji.setTextColor(Color.RED);
+                                    bodyLayout.setAlpha((float) 0.3);
+                                    emojiLayout.setAlpha(1);
+                                    String uri = "@drawable/sad";
+                                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                                    imageEmoji.setImageDrawable(getResources().getDrawable(imageResource));
 
                                     if (btnChoice2.getText().toString().equals(quiz.getCorrect_answer()))
                                     {
@@ -262,6 +288,7 @@ public class QuizActivity extends AppCompatActivity {
                                             btnChoice3.setBackground(getDrawable(R.drawable.custom_radio_button));
                                             btnChoice4.setBackground(getDrawable(R.drawable.custom_radio_button));
 
+                                            btnChoice1.setEnabled(true);
                                             btnChoice2.setEnabled(true);
                                             btnChoice3.setEnabled(true);
                                             btnChoice4.setEnabled(true);
@@ -274,22 +301,28 @@ public class QuizActivity extends AppCompatActivity {
                         });
 
                         btnChoice2.setOnClickListener(new View.OnClickListener() {
+                            @SuppressLint("UseCompatLoadingForDrawables")
                             @Override
                             public void onClick(View view) {
                                 mp.start();
 
                                 btnChoice1.setEnabled(false);
+                                btnChoice2.setEnabled(false);
                                 btnChoice3.setEnabled(false);
                                 btnChoice4.setEnabled(false);
 
                                 if (btnChoice2.getText().toString().equals(quiz.getCorrect_answer()))
                                 {
-                                    btnChoice2.setBackgroundColor(Color.parseColor("#57A35D"));
-                                    btnChoice2.setTextColor(Color.WHITE);
-                                    // happy smiley
-                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude01"), Toast.LENGTH_LONG);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.show();
+//                                    btnChoice2.setBackgroundColor(Color.parseColor("#57A35D"));
+//                                    btnChoice2.setTextColor(Color.WHITE);
+
+//                                    txtEmoji.setText("Great!");
+                                    txtEmoji.setTextColor(Color.GREEN);
+                                    bodyLayout.setAlpha((float) 0.3);
+                                    emojiLayout.setAlpha(1);
+                                    String uri = "@drawable/happy";
+                                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                                    imageEmoji.setImageDrawable(getResources().getDrawable(imageResource));
 
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
@@ -300,6 +333,7 @@ public class QuizActivity extends AppCompatActivity {
                                             btnChoice2.setBackground(getDrawable(R.drawable.custom_radio_button));
 
                                             btnChoice1.setEnabled(true);
+                                            btnChoice2.setEnabled(true);
                                             btnChoice3.setEnabled(true);
                                             btnChoice4.setEnabled(true);
 
@@ -313,10 +347,14 @@ public class QuizActivity extends AppCompatActivity {
 
                                     btnChoice2.setBackgroundColor(Color.parseColor("#BA3F37"));
                                     btnChoice2.setTextColor(Color.WHITE);
-                                    // happy smiley
-                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude1e"), Toast.LENGTH_LONG);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.show();
+
+//                                    txtEmoji.setText("Sorry Wrong...");
+                                    txtEmoji.setTextColor(Color.RED);
+                                    bodyLayout.setAlpha((float) 0.3);
+                                    emojiLayout.setAlpha(1);
+                                    String uri = "@drawable/sad";
+                                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                                    imageEmoji.setImageDrawable(getResources().getDrawable(imageResource));
 
                                     if (btnChoice1.getText().toString().equals(quiz.getCorrect_answer()))
                                     {
@@ -345,6 +383,7 @@ public class QuizActivity extends AppCompatActivity {
                                             btnChoice4.setBackground(getDrawable(R.drawable.custom_radio_button));
 
                                             btnChoice1.setEnabled(true);
+                                            btnChoice2.setEnabled(true);
                                             btnChoice3.setEnabled(true);
                                             btnChoice4.setEnabled(true);
 
@@ -356,22 +395,28 @@ public class QuizActivity extends AppCompatActivity {
                         });
 
                         btnChoice3.setOnClickListener(new View.OnClickListener() {
+                            @SuppressLint("UseCompatLoadingForDrawables")
                             @Override
                             public void onClick(View view) {
                                 mp.start();
 
                                 btnChoice1.setEnabled(false);
                                 btnChoice2.setEnabled(false);
+                                btnChoice3.setEnabled(false);
                                 btnChoice4.setEnabled(false);
 
                                 if (btnChoice3.getText().toString().equals(quiz.getCorrect_answer()))
                                 {
-                                    btnChoice3.setBackgroundColor(Color.parseColor("#57A35D"));
-                                    btnChoice3.setTextColor(Color.WHITE);
-                                    // happy smiley
-                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude01"), Toast.LENGTH_LONG);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.show();
+//                                    btnChoice3.setBackgroundColor(Color.parseColor("#57A35D"));
+//                                    btnChoice3.setTextColor(Color.WHITE);
+
+//                                    txtEmoji.setText("Great!");
+                                    txtEmoji.setTextColor(Color.GREEN);
+                                    bodyLayout.setAlpha((float) 0.3);
+                                    emojiLayout.setAlpha(1);
+                                    String uri = "@drawable/happy";
+                                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                                    imageEmoji.setImageDrawable(getResources().getDrawable(imageResource));
 
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
@@ -383,6 +428,7 @@ public class QuizActivity extends AppCompatActivity {
 
                                             btnChoice1.setEnabled(true);
                                             btnChoice2.setEnabled(true);
+                                            btnChoice3.setEnabled(true);
                                             btnChoice4.setEnabled(true);
 
                                             updateQuestion();
@@ -393,12 +439,16 @@ public class QuizActivity extends AppCompatActivity {
                                 {
                                     wrong++;
 
-                                    btnChoice3.setBackgroundColor(Color.parseColor("#BA3F37"));
-                                    btnChoice3.setTextColor(Color.WHITE);
-                                    // sad smiley
-                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude1e"), Toast.LENGTH_LONG);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.show();
+//                                    btnChoice3.setBackgroundColor(Color.parseColor("#BA3F37"));
+//                                    btnChoice3.setTextColor(Color.WHITE);
+
+//                                    txtEmoji.setText("Sorry Wrong...");
+                                    txtEmoji.setTextColor(Color.RED);
+                                    bodyLayout.setAlpha((float) 0.3);
+                                    emojiLayout.setAlpha(1);
+                                    String uri = "@drawable/sad";
+                                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                                    imageEmoji.setImageDrawable(getResources().getDrawable(imageResource));
 
                                     if (btnChoice1.getText().toString().equals(quiz.getCorrect_answer()))
                                     {
@@ -428,6 +478,7 @@ public class QuizActivity extends AppCompatActivity {
 
                                             btnChoice1.setEnabled(true);
                                             btnChoice2.setEnabled(true);
+                                            btnChoice3.setEnabled(true);
                                             btnChoice4.setEnabled(true);
 
                                             updateQuestion();
@@ -438,6 +489,7 @@ public class QuizActivity extends AppCompatActivity {
                         });
 
                         btnChoice4.setOnClickListener(new View.OnClickListener() {
+                            @SuppressLint("UseCompatLoadingForDrawables")
                             @Override
                             public void onClick(View view) {
                                 mp.start();
@@ -445,15 +497,20 @@ public class QuizActivity extends AppCompatActivity {
                                 btnChoice1.setEnabled(false);
                                 btnChoice2.setEnabled(false);
                                 btnChoice3.setEnabled(false);
+                                btnChoice4.setEnabled(false);
 
                                 if (btnChoice4.getText().toString().equals(quiz.getCorrect_answer()))
                                 {
-                                    btnChoice4.setBackgroundColor(Color.parseColor("#57A35D"));
-                                    btnChoice4.setTextColor(Color.WHITE);
-                                    // happy smiley
-                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude01"), Toast.LENGTH_LONG);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.show();
+//                                    btnChoice4.setBackgroundColor(Color.parseColor("#57A35D"));
+//                                    btnChoice4.setTextColor(Color.WHITE);
+
+//                                    txtEmoji.setText("Great!");
+                                    txtEmoji.setTextColor(Color.GREEN);
+                                    bodyLayout.setAlpha((float) 0.3);
+                                    emojiLayout.setAlpha(1);
+                                    String uri = "@drawable/happy";
+                                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                                    imageEmoji.setImageDrawable(getResources().getDrawable(imageResource));
 
                                     Handler handler = new Handler();
                                     handler.postDelayed(new Runnable() {
@@ -466,6 +523,7 @@ public class QuizActivity extends AppCompatActivity {
                                             btnChoice1.setEnabled(true);
                                             btnChoice2.setEnabled(true);
                                             btnChoice3.setEnabled(true);
+                                            btnChoice4.setEnabled(true);
 
                                             updateQuestion();
                                         }
@@ -475,12 +533,16 @@ public class QuizActivity extends AppCompatActivity {
                                 {
                                     wrong++;
 
-                                    btnChoice4.setBackgroundColor(Color.parseColor("#BA3F37"));
-                                    btnChoice4.setTextColor(Color.WHITE);
-                                    // sad smiley
-                                    Toast toast = Toast.makeText(QuizActivity.this, "   " + ("\ud83d\ude1e"), Toast.LENGTH_LONG);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.show();
+//                                    btnChoice4.setBackgroundColor(Color.parseColor("#BA3F37"));
+//                                    btnChoice4.setTextColor(Color.WHITE);
+
+//                                    txtEmoji.setText("Sorry Wrong...");
+                                    txtEmoji.setTextColor(Color.RED);
+                                    bodyLayout.setAlpha((float) 0.3);
+                                    emojiLayout.setAlpha(1);
+                                    String uri = "@drawable/sad";
+                                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                                    imageEmoji.setImageDrawable(getResources().getDrawable(imageResource));
 
                                     if (btnChoice1.getText().toString().equals(quiz.getCorrect_answer()))
                                     {
@@ -511,6 +573,7 @@ public class QuizActivity extends AppCompatActivity {
                                             btnChoice1.setEnabled(true);
                                             btnChoice2.setEnabled(true);
                                             btnChoice3.setEnabled(true);
+                                            btnChoice4.setEnabled(true);
 
                                             updateQuestion();
                                         }

@@ -1,5 +1,6 @@
 package com.example.mothertongue;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.media.Image;
@@ -31,6 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -50,6 +52,9 @@ public class WordsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_words_list);
 
+        // stop bg music
+        stopService(new Intent(this, BackgroundMusicService.class));
+
         wordDatabase = FirebaseDatabase.getInstance().getReference("rd_words");
 
         wordList = (RecyclerView) findViewById(R.id.wordList);
@@ -63,8 +68,9 @@ public class WordsListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mp.start();
-                Intent myIntent = new Intent(WordsListActivity.this, ReadingDrillsActivity.class);
-                startActivity(myIntent);
+                Intent intent = new Intent(WordsListActivity.this, ReadingDrillsActivity.class);
+                intent.putExtra("startMusic", "true");
+                startActivity(intent);
             }
         });
 
@@ -112,7 +118,7 @@ public class WordsListActivity extends AppCompatActivity {
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Word, WordsListActivity.WordsViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull WordsListActivity.WordsViewHolder holder, int position, @NonNull Word model) {
-                holder.setDetails(model.getTitle(), model.getDescription());
+                holder.setDetails(model.getTitle(), model.getDescription(), model.getEnglish_description(), model.getAudio_url());
 
 
                 holder.itemView.setTag(R.id.wordId, model.getId());
@@ -157,19 +163,28 @@ public class WordsListActivity extends AppCompatActivity {
             view.setOnClickListener(this);
         }
 
-        public void setDetails(String title, String description) {
+        @SuppressLint("SetTextI18n")
+        public void setDetails(String title, String description, String english_description, String audio_url) {
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtEnglishDescription = (TextView) view.findViewById(R.id.txtEnglishDescription);
             TextView txtDescription = (TextView) view.findViewById(R.id.txtDescription);
 
             txtTitle.setText(title);
+            txtEnglishDescription.setText("English: " + english_description);
             txtDescription.setText(description);
 
+            MediaPlayer mediaPlayer = new MediaPlayer();
+            try {
+                mediaPlayer.setDataSource(audio_url);
+                mediaPlayer.prepareAsync();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             ImageButton btnSpeak = (ImageButton) view.findViewById(R.id.btnSpeak);
             btnSpeak.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    textToSpeech.speak(title, TextToSpeech.QUEUE_FLUSH, null, null);
-                    utterListener.onDone(description);
+                    mediaPlayer.start();
                 }
             });
         }
@@ -200,21 +215,4 @@ public class WordsListActivity extends AppCompatActivity {
             }
         }
     };
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        Intent intent = new Intent(this, BackgroundMusicService.class);
-        intent.setAction("ACTION_PAUSE");
-        startService(intent);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Intent intent = new Intent(this, BackgroundMusicService.class);
-        intent.setAction("ACTION_PLAY");
-        startService(intent);
-    }
 }

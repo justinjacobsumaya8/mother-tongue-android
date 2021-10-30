@@ -7,155 +7,191 @@
     android:layout_height="match_parent"
     tools:context=".QuizActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/layoutNav"
-        android:paddingTop="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp">
-
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="1dp"
-            android:background="@android:color/transparent"
-            android:drawableStart="@drawable/baseline_chevron_left_black_36dp"
-            android:gravity="center"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:text="Back"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp"
-            android:fontFamily="@font/montserrat_medium"/>
-
-    </RelativeLayout>
-
     <LinearLayout
-        android:id="@+id/layoutTitle"
+        android:id="@+id/emojiLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layoutNav"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:translationZ="90dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:alpha="0">
+
+        <ImageView
+            android:id="@+id/imageEmoji"
+            android:layout_width="150dip"
+            android:layout_height="150dip"
+            android:scaleType="fitXY"
+            android:background="@drawable/sad"/>
+
         <TextView
-            android:id="@+id/txtTitle"
+            android:id="@+id/txtEmoji"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pagsukod Sa Kahanas"
-            android:textSize="16dp"
-            android:textStyle="bold"
+            android:layout_below="@+id/emojiImage"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/colorPrimary"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutSecondTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layoutTitle"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-        <TextView
-            android:id="@+id/txtSecondTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pilia ang husto nga tubag ug pinduta ang rektanggulo niini."
-            android:textSize="13dp"
-            android:fontFamily="@font/montserrat_medium"/>
-
+            android:text=""
+            android:textColor="@color/colorRed"
+            android:textSize="24sp"
+            android:gravity="center"/>
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/layoutQuestion"
+        android:id="@+id/bodyLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutSecondTitle"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="30dp">
+        android:layout_height="match_parent"
+        android:alpha="1">
 
-        <TextView
-            android:id="@+id/txtQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_medium"
-            android:text="1. Nadakpan na ang kawatan sa pikas baryo. Unsa ang buot ipasabut sa pulong nga adunay linya?"
-            android:textSize="16dp"
-            android:textStyle="bold" />
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtQuestion"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="14dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:id="@+id/layoutNav"
+            android:paddingTop="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp">
 
-            <RadioButton
-                android:id="@+id/btnChoice1"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_radio_button"
-                android:button="@android:color/transparent"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="16dp"
-                android:text="Nasakpan"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="1dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/baseline_chevron_left_black_36dp"
+                android:gravity="center"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="Back"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
                 android:fontFamily="@font/montserrat_medium"/>
 
-            <RadioButton
-                android:id="@+id/btnChoice2"
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutNav"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp">
+            <TextView
+                android:id="@+id/txtTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_radio_button"
-                android:button="@android:color/transparent"
-                android:layout_marginTop="12dp"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="16dp"
-                android:text="Gipagawas"
+                android:text="Pagsukod Sa Kahanas"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/colorPrimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutSecondTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutTitle"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+            <TextView
+                android:id="@+id/txtSecondTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilia ang husto nga tubag ug pinduta ang rektanggulo niini."
+                android:textSize="13dp"
                 android:fontFamily="@font/montserrat_medium"/>
 
-            <RadioButton
-                android:id="@+id/btnChoice3"
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutSecondTitle"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/txtQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="1. Nadakpan na ang kawatan sa pikas baryo. Unsa ang buot ipasabut sa pulong nga adunay linya?"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_radio_button"
-                android:button="@android:color/transparent"
-                android:layout_marginTop="12dp"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="16dp"
-                android:text="Naulahi"
-                android:fontFamily="@font/montserrat_medium"/>
+                android:layout_below="@+id/txtQuestion"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="14dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/btnChoice4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_radio_button"
-                android:button="@android:color/transparent"
-                android:layout_marginTop="12dp"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="16dp"
-                android:text="Nilapas"
-                android:fontFamily="@font/montserrat_medium"/>
+                <RadioButton
+                    android:id="@+id/btnChoice1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_radio_button"
+                    android:button="@android:color/transparent"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="Nasakpan"
+                    android:fontFamily="@font/montserrat_medium"/>
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/btnChoice2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_radio_button"
+                    android:button="@android:color/transparent"
+                    android:layout_marginTop="12dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="Gipagawas"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <RadioButton
+                    android:id="@+id/btnChoice3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_radio_button"
+                    android:button="@android:color/transparent"
+                    android:layout_marginTop="12dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="Naulahi"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <RadioButton
+                    android:id="@+id/btnChoice4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_radio_button"
+                    android:button="@android:color/transparent"
+                    android:layout_marginTop="12dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="Nilapas"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </RadioGroup>
+        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>

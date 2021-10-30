@@ -65,8 +65,9 @@ public class QuizResultActivity extends AppCompatActivity {
 
         String uri;
 
-        // assume a total of 6 quizzes, 4 is passing
-        if (correct >= 4) {
+        double passing = total * .75;
+        Log.i("Passing", String.valueOf(passing));
+        if (correct >= passing) {
             win_sound.start();
             bgLayout.setBackground(getDrawable(R.drawable.success_bg));
             bgText.setBackground(getDrawable(R.drawable.success_bg_for_text));

@@ -24,4 +24,6 @@
     <color name="cardColorGreen">#E2FFE5</color>
     <color name="cardColorYellow">#FFE8C7</color>
     <color name="cardColorBlue">#E2F1FF</color>
+
+    <color name="colorRed">#C70039</color>
 </resources>

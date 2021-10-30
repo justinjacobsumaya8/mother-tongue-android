@@ -53,6 +53,16 @@ public class ReadingDrillsActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
+        Intent intent = getIntent();
+        if(intent != null && intent.getExtras() != null){
+            String startMusic = intent.getStringExtra("startMusic");
+            if (startMusic != null) {
+                Intent musicIntent = new Intent(this, BackgroundMusicService.class);
+                musicIntent.setAction("ACTION_PLAY");
+                startService(musicIntent);
+            }
+        }
     }
 
     @Override

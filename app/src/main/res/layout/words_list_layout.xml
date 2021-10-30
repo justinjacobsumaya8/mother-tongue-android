@@ -37,13 +37,26 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtEnglishDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="English: Stream"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/txtTitle"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textStyle="italic"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
                     android:id="@+id/txtDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="porma sa tubig nga nagaagas gikan sa tubod"
+                    android:text="Porma sa tubig nga nagaagas gikan sa tubod"
                     android:textSize="14sp"
-                    android:layout_marginTop="15dp"
-                    android:layout_below="@+id/txtTitle"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/txtEnglishDescription"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:fontFamily="@font/montserrat_medium"/>
@@ -59,8 +72,7 @@
                 android:layout_alignEnd="@+id/layoutTxt"
                 android:layout_alignTop="@+id/layoutTxt"
                 android:padding="5dp"
-                android:layout_marginBottom="10dp"
-                android:visibility="gone"/>
+                android:layout_marginBottom="10dp"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
