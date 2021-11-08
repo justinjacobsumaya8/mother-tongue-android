@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item type="id" name="lessonId" />
+    <item type="id" name="lessonNumber" />
     <item type="id" name="lessonName" />
+    <item type="id" name="lessonQuizInstruction" />
 
     <item type="id" name="wordId" />
     <item type="id" name="wordTitle" />

@@ -22,7 +22,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20332641601562498" />
         <entry key="app/src/main/res/layout/activity_paragraph_list.xml" value="0.21653594970703127" />
         <entry key="app/src/main/res/layout/activity_paragraph_result.xml" value="0.2775917606077332" />
-        <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.21007385253906252" />
+        <entry key="app/src/main/res/layout/activity_quiz.xml" value="0.3354049682617188" />
         <entry key="app/src/main/res/layout/activity_quiz_result.xml" value="0.30217132568359373" />
         <entry key="app/src/main/res/layout/activity_reading_drills.xml" value="0.2820061282835145" />
         <entry key="app/src/main/res/layout/activity_reading_drills_list.xml" value="0.2006340579710145" />
@@ -32,8 +32,19 @@
         <entry key="app/src/main/res/layout/lesson_description_layout.xml" value="0.28338599571814904" />
         <entry key="app/src/main/res/layout/lesson_list_layout.xml" value="0.17694091796875" />
         <entry key="app/src/main/res/layout/lesson_result_layout.xml" value="0.301711328478827" />
+        <entry key="app/src/main/res/layout/lesson_result_layout_1.xml" value="0.13298187255859373" />
+        <entry key="app/src/main/res/layout/lesson_result_layout_2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/lesson_result_layout_3.xml" value="0.1864784782701503" />
+        <entry key="app/src/main/res/layout/lesson_result_layout_4.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/lesson_result_layout_5.xml" value="0.206368309813119" />
+        <entry key="app/src/main/res/layout/lesson_result_layout_8.xml" value="0.2006340579710145" />
+        <entry key="app/src/main/res/layout/lesson_result_layout_final.xml" value="0.2006340579710145" />
         <entry key="app/src/main/res/layout/paragraph_list_layout.xml" value="0.2006340579710145" />
         <entry key="app/src/main/res/layout/paragraph_result_layout.xml" value="0.2006340579710145" />
+        <entry key="app/src/main/res/layout/paragraph_result_layout_2.xml" value="0.29078450963117075" />
+        <entry key="app/src/main/res/layout/paragraph_result_layout_3.xml" value="0.3061760501585145" />
+        <entry key="app/src/main/res/layout/paragraph_result_layout_4.xml" value="0.15129781420765026" />
+        <entry key="app/src/main/res/layout/paragraph_result_layout_5.xml" value="0.2304543083482753" />
         <entry key="app/src/main/res/layout/words_list_layout.xml" value="0.299428613635077" />
       </map>
     </option>

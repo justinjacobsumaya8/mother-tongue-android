@@ -1,11 +1,11 @@
 package com.example.mothertongue;
 
-import static android.content.ContentValues.TAG;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,22 +26,23 @@ import com.example.mothertongue.Models.LessonDetail;
 import com.example.mothertongue.Services.BackgroundMusicService;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class LessonsResultActivity extends AppCompatActivity {
 
     private Button btnBack;
     private RecyclerView lessonBody;
-    private String lessonName;
+    private String lessonName, lessonQuizInstruction;
 
     private DatabaseReference lessonDetailDatabase;
 
     private Integer lessonId = 0;
+    private String lessonNumber;
 
     FirebaseRecyclerAdapter<LessonDetail, LessonsResultViewHolder> firebaseRecyclerAdapter;
 
@@ -69,7 +71,9 @@ public class LessonsResultActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         lessonName = intent.getStringExtra("lessonName");
+        lessonQuizInstruction = intent.getStringExtra("lessonQuizInstruction");
         lessonId = intent.getIntExtra("lessonId", 0);
+        lessonNumber = intent.getStringExtra("lessonNumber");
 
         firebaseLessonBody(lessonId);
     }
@@ -87,15 +91,43 @@ public class LessonsResultActivity extends AppCompatActivity {
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<LessonDetail, LessonsResultViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull LessonsResultViewHolder holder, int position, @NonNull LessonDetail model) {
-
-                holder.setDetails(model);
+                if (lessonNumber.equals("8")) {
+                    holder.setDetails(model);
+                } else {
+                    holder.setDetails2(model);
+                }
             }
 
             @NonNull
             @Override
             public LessonsResultViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.lesson_result_layout, parent, false);
+                View view = null;
+
+                Log.i("LessonNumber", lessonNumber);
+
+                if (lessonNumber.equals("1")) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.lesson_result_layout_1, parent, false);
+                } else if (lessonNumber.equals("2")) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.lesson_result_layout_2, parent, false);
+                } else if (lessonNumber.equals("3")) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.lesson_result_layout_3, parent, false);
+                } else if (lessonNumber.equals("4")) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.lesson_result_layout_4, parent, false);
+                } else if (lessonNumber.equals("5")) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.lesson_result_layout_5, parent, false);
+                } else if (lessonNumber.equals("8")) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.lesson_result_layout_8, parent, false);
+                }
+                else {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.lesson_result_layout_1, parent, false);
+                }
                 return new LessonsResultViewHolder(view);
             }
 
@@ -193,6 +225,26 @@ public class LessonsResultActivity extends AppCompatActivity {
                     Intent intent = new Intent(LessonsResultActivity.this, QuizActivity.class);
                     intent.putExtra("lessonId", lessonId);
                     intent.putExtra("lessonName", lessonName);
+                    intent.putExtra("lessonNumber", lessonNumber);
+                    intent.putExtra("lessonQuizInstruction", lessonQuizInstruction);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        public void setDetails2(LessonDetail lessonDetail) {
+
+            final MediaPlayer mp = MediaPlayer.create(view.getContext(), R.raw.btn_sound);
+            Button btnTakeQuiz = (Button) view.findViewById(R.id.btnTakeQuiz);
+            btnTakeQuiz.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mp.start();
+                    Intent intent = new Intent(LessonsResultActivity.this, QuizActivity.class);
+                    intent.putExtra("lessonId", lessonId);
+                    intent.putExtra("lessonName", lessonName);
+                    intent.putExtra("lessonNumber", lessonNumber);
+                    intent.putExtra("lessonQuizInstruction", lessonQuizInstruction);
                     startActivity(intent);
                 }
             });

@@ -105,11 +105,12 @@ public class LessonsActivity extends AppCompatActivity {
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Lesson, LessonsViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull LessonsViewHolder holder, int position, @NonNull Lesson model) {
-                holder.setDetails(model.getLesson(), model.getTitle());
-
+                holder.setDetails(model);
 
                 holder.itemView.setTag(R.id.lessonId, model.getId());
+                holder.itemView.setTag(R.id.lessonNumber, model.getLesson_number());
                 holder.itemView.setTag(R.id.lessonName, model.getLesson());
+                holder.itemView.setTag(R.id.lessonQuizInstruction, model.getQuiz_instruction());
             }
 
             @NonNull
@@ -150,12 +151,12 @@ public class LessonsActivity extends AppCompatActivity {
             view.setOnClickListener(this);
         }
 
-        public void setDetails(String lessonNumber, String title) {
+        public void setDetails(Lesson model) {
             TextView txtLessonNumber = (TextView) view.findViewById(R.id.txtLessonNumber);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
 
-            txtLessonNumber.setText(lessonNumber);
-            txtTitle.setText(title);
+            txtLessonNumber.setText(model.getLesson());
+            txtTitle.setText(model.getTitle());
         }
 
         @Override
@@ -163,7 +164,9 @@ public class LessonsActivity extends AppCompatActivity {
             mp.start();
             Intent intent = new Intent(LessonsActivity.this, LessonsResultActivity.class);
             intent.putExtra("lessonId", (Integer) view.getTag(R.id.lessonId));
+            intent.putExtra("lessonNumber", String.valueOf(view.getTag(R.id.lessonNumber)));
             intent.putExtra("lessonName", String.valueOf(view.getTag(R.id.lessonName)));
+            intent.putExtra("lessonQuizInstruction", String.valueOf(view.getTag(R.id.lessonQuizInstruction)));
             LessonsActivity.this.startActivity(intent);
         }
     }

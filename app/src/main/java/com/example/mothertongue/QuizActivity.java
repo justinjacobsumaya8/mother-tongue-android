@@ -62,7 +62,7 @@ public class QuizActivity extends AppCompatActivity {
     int max = 13;
 
     private Integer lessonId = 0;
-    private String lessonName;
+    private String lessonName, lessonNumber, lessonQuizInstruction;
 
     List<Integer> indices;
 
@@ -78,6 +78,8 @@ public class QuizActivity extends AppCompatActivity {
         if(intent != null && intent.getExtras() != null){
             lessonId = intent.getIntExtra("lessonId", 0);
             lessonName = intent.getStringExtra("lessonName");
+            lessonNumber = intent.getStringExtra("lessonNumber");
+            lessonQuizInstruction = intent.getStringExtra("lessonQuizInstruction");
         }
 
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.btn_sound);
@@ -94,6 +96,8 @@ public class QuizActivity extends AppCompatActivity {
                     intent = new Intent(QuizActivity.this, LessonsResultActivity.class);
                     intent.putExtra("lessonId", lessonId);
                     intent.putExtra("lessonName", lessonName);
+                    intent.putExtra("lessonQuizInstruction", lessonQuizInstruction);
+                    intent.putExtra("lessonNumber", lessonNumber);
                 }
                 startActivity(intent);
             }
@@ -119,6 +123,7 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             ref = FirebaseDatabase.getInstance().getReference().child("lessons").child(String.valueOf(lessonId)).child("quizzes");
             txtTitle.setText("Pagsukod sa Kahanas - " + lessonName);
+            txtSecondTitle.setText(lessonQuizInstruction);
         }
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -134,6 +139,19 @@ public class QuizActivity extends AppCompatActivity {
         });
         Log.i("totalChild", String.valueOf(totalChild));
         // Can't get totalChild of quizzes table - will use static max for now
+        if (lessonId == 1) {
+            max = 11; // 10 items
+        } else if (lessonId == 2) {
+            max = 10; // 9 items
+        } else if (lessonId == 3) {
+            max = 6; // 5 items
+        } else if (lessonId == 4) {
+            max = 6; // 5 items
+        } else if (lessonId == 5) {
+            max = 6; // 5 items
+        } else if (lessonId == 6) {
+            max = 7; // 6 items
+        }
         indices = new ArrayList<Integer>(max);
         for(int c = 1; c < max; ++c)
         {

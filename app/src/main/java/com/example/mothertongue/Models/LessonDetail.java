@@ -3,12 +3,12 @@ package com.example.mothertongue.Models;
 public class LessonDetail {
 
     String d1_title, d1_description_1, d1_image_1, d2_title, d2_description_1, d2_image_1, d2_image_2, d2_image_3, d2_image_4, d3_title, d3_sub_title_1, d3_sub_title_2, d3_sub_title_3, d3_description_1, d3_description_2, d3_description_3, d3_example_1, d3_example_2, d3_example_3;
-    Integer id, lesson_id;
+    Integer id, lesson_id, lesson_number;
 
     public LessonDetail() {
     }
 
-    public LessonDetail(String d1_title, String d1_description_1, String d1_image_1, String d2_title, String d2_description_1, String d2_image_1, String d2_image_2, String d2_image_3, String d2_image_4, String d3_title, String d3_sub_title_1, String d3_sub_title_2, String d3_sub_title_3, String d3_description_1, String d3_description_2, String d3_description_3, String d3_example_1, String d3_example_2, String d3_example_3, Integer id, Integer lesson_id) {
+    public LessonDetail(String d1_title, String d1_description_1, String d1_image_1, String d2_title, String d2_description_1, String d2_image_1, String d2_image_2, String d2_image_3, String d2_image_4, String d3_title, String d3_sub_title_1, String d3_sub_title_2, String d3_sub_title_3, String d3_description_1, String d3_description_2, String d3_description_3, String d3_example_1, String d3_example_2, String d3_example_3, Integer id, Integer lesson_id, Integer lesson_number) {
         this.d1_title = d1_title;
         this.d1_description_1 = d1_description_1;
         this.d1_image_1 = d1_image_1;
@@ -30,6 +30,7 @@ public class LessonDetail {
         this.d3_example_3 = d3_example_3;
         this.id = id;
         this.lesson_id = lesson_id;
+        this.lesson_number = lesson_number;
     }
 
     public String getD1_title() {
@@ -198,5 +199,13 @@ public class LessonDetail {
 
     public void setLesson_id(Integer lesson_id) {
         this.lesson_id = lesson_id;
+    }
+
+    public Integer getLesson_number() {
+        return lesson_number;
+    }
+
+    public void setLesson_number(Integer lesson_number) {
+        this.lesson_number = lesson_number;
     }
 }

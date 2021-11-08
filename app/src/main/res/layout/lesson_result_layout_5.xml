@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:id="@+id/layoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtLesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pagtulun-an 5"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:id="@+id/txtBodyTitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pagkuha sa Detalye sa Sugilanon"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_margin="12dp"
+            android:layout_below="@+id/layoutTitle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I. Hisgutanan"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unsa ang mga detalye sa sugilanon?"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ang pagkuha sa mga detalye sa sugilanon kay ang pag grupo niini sa tulo ka hisgutanan."
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gihisgutan, Nahitabuan, Mga panghitabo."
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/lesson_5"
+                android:layout_marginTop="13dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pananglitan:"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat_medium"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="12dp"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="“ Si "
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rina "
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="kay usa ka bata nga kugihan. "
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kada-adlaw"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="niya ginalimpyohan ang iyang "
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="kwarto, "
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="samtang "
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="nagatuon siya sa iyang mga leksiyon "
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="kanunay."
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="12dp"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gihisgutan/tawo: "
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rina"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nahitabuan: "
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kwarto"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Panghitabo: "
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/samtang_nagatuon"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="12dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unsa ang ginahisgutan sa sugilanon."
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_margin="12dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Pananglitan:"-->
+<!--                android:textSize="12sp"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Si Rina usa ka batang kugihan. ______"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="=  Gihisgutan/Tawo"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Siya ang nagalimpyo sa iyang kwarto mao malipayon iyang ginikanan. ___"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="= Nahitabuan"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Siya ang nagalimpyo sa iyang kwarto mao malipayon iyang ginikanan. ___"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="= Nahitabuan"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Gatuon siya sa iyang leksyon kanunay. ____"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="= Panghitabo"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Si aling Malu ang nag-atiman sa iring.____"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="= Gihisgutan"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Nalipay siya kay nakita niya ang iring. _____"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="= Panghitabo"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:fontFamily="@font/montserrat_medium"/>-->
+<!--        </LinearLayout>-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/layoutTitle2"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/cardColor">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kinatibuk-an"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_marginTop="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ang sugilanon adunay mga importante nga detalye sama sa mga tawo nga nagdala og kinabuhi sa sugilnaon og kinabuhi sa sugilanon, ug ang dapit nga nahitaboan sa sugilanon ug mga importanteng panghitabo."
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gihisgutan - "
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nagahisgot kini sa kinaiya sa"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mga tawo o mananap diha sa sugilanon."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nahitabuan - "
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nagahisgot kini sa lugar kung asa"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nahitabo ang sugilanon."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mga panghitabo - "
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nagahisgot sa importanteng"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="parteng parte sa sugilanon labi na sa mga tawo"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="anaa sa sugilanon."
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/btnTakeQuiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Take Quiz"
+                android:padding="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="20sp"
+                android:background="@drawable/round_shape_btn"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_medium"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

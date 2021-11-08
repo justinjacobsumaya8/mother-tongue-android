@@ -96,6 +96,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp">
+
             <TextView
                 android:id="@+id/txtSecondTitle"
                 android:layout_width="wrap_content"

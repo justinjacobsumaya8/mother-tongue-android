@@ -65,15 +65,33 @@ public class ParagraphResultActivity extends AppCompatActivity {
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Paragraph, ParagraphResultActivity.ParagraphResultViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ParagraphResultActivity.ParagraphResultViewHolder holder, int position, @NonNull Paragraph model) {
-
                 holder.setDetails(model);
             }
 
             @NonNull
             @Override
             public ParagraphResultActivity.ParagraphResultViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.paragraph_result_layout, parent, false);
+                View view = null;
+                if (paragraphId.equals(1)) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.paragraph_result_layout, parent, false);
+                } else if (paragraphId.equals(2)) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.paragraph_result_layout_2, parent, false);
+                } else if (paragraphId.equals(3)) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.paragraph_result_layout_3, parent, false);
+                } else if (paragraphId.equals(4)) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.paragraph_result_layout_4, parent, false);
+                } else if (paragraphId.equals(5)) {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.paragraph_result_layout_5, parent, false);
+                }
+                else {
+                    view = LayoutInflater.from(parent.getContext())
+                            .inflate(R.layout.paragraph_result_layout, parent, false);
+                }
                 return new ParagraphResultActivity.ParagraphResultViewHolder(view);
             }
 
@@ -124,9 +142,19 @@ public class ParagraphResultActivity extends AppCompatActivity {
 
             Button btnChangeLanguage = (Button) view.findViewById(R.id.btnChangeLanguage);
 
-            setDetailsCebuano(view, paragraph);
-            btnChangeLanguage.setText("English");
+            if (paragraph.getId().equals(1)) {
+                setDetailsCebuano(view, paragraph);
+            } else if (paragraph.getId().equals(2)) {
+                setDetailsCebuano2(view, paragraph);
+            } else if (paragraph.getId().equals(3)) {
+                setDetailsCebuano3(view, paragraph);
+            } else if (paragraph.getId().equals(4)) {
+                setDetailsCebuano4(view, paragraph);
+            } else if (paragraph.getId().equals(5)) {
+                setDetailsCebuano5(view, paragraph);
+            }
 
+            btnChangeLanguage.setText("English");
             btnChangeLanguage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -135,13 +163,35 @@ public class ParagraphResultActivity extends AppCompatActivity {
                     String buttonText = b.getText().toString();
 
                     if (buttonText.equals("English")) {
-                        setDetailsEnglish(view, paragraph);
                         Toast.makeText(view.getContext(), "Translated to English", Toast.LENGTH_SHORT).show();
                         btnChangeLanguage.setText("Cebuano");
+
+                        if (paragraph.getId().equals(1)) {
+                            setDetailsEnglish(view, paragraph);
+                        } else if (paragraph.getId().equals(2)) {
+                            setDetailsEnglish2(view, paragraph);
+                        } else if (paragraph.getId().equals(3)) {
+                            setDetailsEnglish3(view, paragraph);
+                        } else if (paragraph.getId().equals(4)) {
+                            setDetailsEnglish4(view, paragraph);
+                        } else if (paragraph.getId().equals(5)) {
+                            setDetailsEnglish5(view, paragraph);
+                        }
                     } else {
-                        setDetailsCebuano(view, paragraph);
                         btnChangeLanguage.setText("English");
                         Toast.makeText(view.getContext(), "Translated to Cebuano", Toast.LENGTH_SHORT).show();
+
+                        if (paragraph.getId().equals(1)) {
+                            setDetailsCebuano(view, paragraph);
+                        } else if (paragraph.getId().equals(2)) {
+                            setDetailsCebuano2(view, paragraph);
+                        } else if (paragraph.getId().equals(3)) {
+                            setDetailsCebuano3(view, paragraph);
+                        } else if (paragraph.getId().equals(4)) {
+                            setDetailsCebuano4(view, paragraph);
+                        } else if (paragraph.getId().equals(5)) {
+                            setDetailsCebuano5(view, paragraph);
+                        }
                     }
                 }
             });
@@ -222,6 +272,179 @@ public class ParagraphResultActivity extends AppCompatActivity {
             txtDiscussSentence4.setText("4. " + paragraph.getDiscuss_sentence_4_english());
             txtDiscussSentence5.setText("5. " + paragraph.getDiscuss_sentence_5_english());
         }
+
+        public void setDetailsCebuano2(View view, Paragraph paragraph) {
+            TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
+            TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
+            TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
+            TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
+            TextView txtDesc4 = (TextView) view.findViewById(R.id.txtDesc4);
+            TextView txtDesc5 = (TextView) view.findViewById(R.id.txtDesc5);
+            TextView txtDesc6 = (TextView) view.findViewById(R.id.txtDesc6);
+            TextView txtDesc7 = (TextView) view.findViewById(R.id.txtDesc7);
+            TextView txtDesc8 = (TextView) view.findViewById(R.id.txtDesc8);
+            TextView txtDesc9 = (TextView) view.findViewById(R.id.txtDesc9);
+            TextView txtDesc10 = (TextView) view.findViewById(R.id.txtDesc10);
+
+            txtTitle.setText(getResources().getString(R.string.title_rd_2));
+            txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_2));
+            txtDesc1.setText(getResources().getString(R.string.detail_1_rd_2));
+            txtDesc2.setText(getResources().getString(R.string.detail_2_rd_2));
+            txtDesc3.setText(getResources().getString(R.string.detail_3_rd_2));
+            txtDesc4.setText(getResources().getString(R.string.detail_4_rd_2));
+            txtDesc5.setText(getResources().getString(R.string.detail_5_rd_2));
+            txtDesc6.setText(getResources().getString(R.string.detail_6_rd_2));
+            txtDesc7.setText(getResources().getString(R.string.detail_7_rd_2));
+            txtDesc8.setText(getResources().getString(R.string.detail_8_rd_2));
+            txtDesc9.setText(getResources().getString(R.string.detail_9_rd_2));
+            txtDesc10.setText(getResources().getString(R.string.detail_10_rd_2));
+        }
+
+        public void setDetailsEnglish2(View view, Paragraph paragraph) {
+            TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
+            TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
+            TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
+            TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
+            TextView txtDesc4 = (TextView) view.findViewById(R.id.txtDesc4);
+            TextView txtDesc5 = (TextView) view.findViewById(R.id.txtDesc5);
+            TextView txtDesc6 = (TextView) view.findViewById(R.id.txtDesc6);
+            TextView txtDesc7 = (TextView) view.findViewById(R.id.txtDesc7);
+            TextView txtDesc8 = (TextView) view.findViewById(R.id.txtDesc8);
+            TextView txtDesc9 = (TextView) view.findViewById(R.id.txtDesc9);
+            TextView txtDesc10 = (TextView) view.findViewById(R.id.txtDesc10);
+
+            txtTitle.setText(getResources().getString(R.string.title_rd_2_english));
+            txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_2_english));
+            txtDesc1.setText(getResources().getString(R.string.detail_1_rd_2_english));
+            txtDesc2.setText(getResources().getString(R.string.detail_2_rd_2_english));
+            txtDesc3.setText(getResources().getString(R.string.detail_3_rd_2_english));
+            txtDesc4.setText(getResources().getString(R.string.detail_4_rd_2_english));
+            txtDesc5.setText(getResources().getString(R.string.detail_5_rd_2_english));
+            txtDesc6.setText(getResources().getString(R.string.detail_6_rd_2_english));
+            txtDesc7.setText(getResources().getString(R.string.detail_7_rd_2_english));
+            txtDesc8.setText(getResources().getString(R.string.detail_8_rd_2_english));
+            txtDesc9.setText(getResources().getString(R.string.detail_9_rd_2_english));
+            txtDesc10.setText(getResources().getString(R.string.detail_10_rd_2_english));
+        }
+
+        public void setDetailsCebuano3(View view, Paragraph paragraph) {
+            TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
+            TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
+            TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
+            TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
+            TextView txtDesc4 = (TextView) view.findViewById(R.id.txtDesc4);
+            TextView txtDesc5 = (TextView) view.findViewById(R.id.txtDesc5);
+            TextView txtDesc6 = (TextView) view.findViewById(R.id.txtDesc6);
+
+            txtTitle.setText(getResources().getString(R.string.title_rd_3));
+            txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_3));
+            txtDesc1.setText(getResources().getString(R.string.detail_1_rd_3));
+            txtDesc2.setText(getResources().getString(R.string.detail_2_rd_3));
+            txtDesc3.setText(getResources().getString(R.string.detail_3_rd_3));
+            txtDesc4.setText(getResources().getString(R.string.detail_4_rd_3));
+            txtDesc5.setText(getResources().getString(R.string.detail_5_rd_3));
+            txtDesc6.setText(getResources().getString(R.string.detail_6_rd_3));
+        }
+
+        public void setDetailsEnglish3(View view, Paragraph paragraph) {
+            TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
+            TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
+            TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
+            TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
+            TextView txtDesc4 = (TextView) view.findViewById(R.id.txtDesc4);
+            TextView txtDesc5 = (TextView) view.findViewById(R.id.txtDesc5);
+            TextView txtDesc6 = (TextView) view.findViewById(R.id.txtDesc6);
+
+            txtTitle.setText(getResources().getString(R.string.title_rd_3_english));
+            txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_3_english));
+            txtDesc1.setText(getResources().getString(R.string.detail_1_rd_3_english));
+            txtDesc2.setText(getResources().getString(R.string.detail_2_rd_3_english));
+            txtDesc3.setText(getResources().getString(R.string.detail_3_rd_3_english));
+            txtDesc4.setText(getResources().getString(R.string.detail_4_rd_3_english));
+            txtDesc5.setText(getResources().getString(R.string.detail_5_rd_3_english));
+            txtDesc6.setText(getResources().getString(R.string.detail_6_rd_3_english));
+        }
+
+        public void setDetailsCebuano4(View view, Paragraph paragraph) {
+            TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
+            TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
+            TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
+            TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
+
+            txtTitle.setText(getResources().getString(R.string.title_rd_4));
+            txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_4));
+            txtDesc1.setText(getResources().getString(R.string.detail_1_rd_4));
+            txtDesc2.setText(getResources().getString(R.string.detail_2_rd_4));
+            txtDesc3.setText(getResources().getString(R.string.detail_3_rd_4));
+        }
+
+        public void setDetailsEnglish4(View view, Paragraph paragraph) {
+            TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
+            TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
+            TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
+            TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
+
+            txtTitle.setText(getResources().getString(R.string.title_rd_4_english));
+            txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_4_english));
+            txtDesc1.setText(getResources().getString(R.string.detail_1_rd_4_english));
+            txtDesc2.setText(getResources().getString(R.string.detail_2_rd_4_english));
+            txtDesc3.setText(getResources().getString(R.string.detail_3_rd_4_english));
+        }
+
+        public void setDetailsCebuano5(View view, Paragraph paragraph) {
+            TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
+            TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
+            TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
+            TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
+            TextView txtDesc4 = (TextView) view.findViewById(R.id.txtDesc4);
+            TextView txtDesc5 = (TextView) view.findViewById(R.id.txtDesc5);
+            TextView txtDesc6 = (TextView) view.findViewById(R.id.txtDesc6);
+            TextView txtDesc7 = (TextView) view.findViewById(R.id.txtDesc7);
+            TextView txtDesc8 = (TextView) view.findViewById(R.id.txtDesc8);
+
+            txtTitle.setText(getResources().getString(R.string.title_rd_5));
+            txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_5));
+            txtDesc1.setText(getResources().getString(R.string.detail_1_rd_5));
+            txtDesc2.setText(getResources().getString(R.string.detail_2_rd_5));
+            txtDesc3.setText(getResources().getString(R.string.detail_3_rd_5));
+            txtDesc4.setText(getResources().getString(R.string.detail_4_rd_5));
+            txtDesc5.setText(getResources().getString(R.string.detail_5_rd_5));
+            txtDesc6.setText(getResources().getString(R.string.detail_6_rd_5));
+            txtDesc7.setText(getResources().getString(R.string.detail_7_rd_5));
+            txtDesc8.setText(getResources().getString(R.string.detail_8_rd_5));
+        }
+
+        public void setDetailsEnglish5(View view, Paragraph paragraph) {
+            TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
+            TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
+            TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
+            TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
+            TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
+            TextView txtDesc4 = (TextView) view.findViewById(R.id.txtDesc4);
+            TextView txtDesc5 = (TextView) view.findViewById(R.id.txtDesc5);
+            TextView txtDesc6 = (TextView) view.findViewById(R.id.txtDesc6);
+            TextView txtDesc7 = (TextView) view.findViewById(R.id.txtDesc7);
+            TextView txtDesc8 = (TextView) view.findViewById(R.id.txtDesc8);
+
+            txtTitle.setText(getResources().getString(R.string.title_rd_5_english));
+            txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_5_english));
+            txtDesc1.setText(getResources().getString(R.string.detail_1_rd_5_english));
+            txtDesc2.setText(getResources().getString(R.string.detail_2_rd_5_english));
+            txtDesc3.setText(getResources().getString(R.string.detail_3_rd_5_english));
+            txtDesc4.setText(getResources().getString(R.string.detail_4_rd_5_english));
+            txtDesc5.setText(getResources().getString(R.string.detail_5_rd_5_english));
+            txtDesc6.setText(getResources().getString(R.string.detail_6_rd_5_english));
+            txtDesc7.setText(getResources().getString(R.string.detail_7_rd_5_english));
+            txtDesc8.setText(getResources().getString(R.string.detail_8_rd_5_english));
+        }
+
     }
 
     @Override

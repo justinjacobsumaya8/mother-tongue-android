@@ -16,4 +16,172 @@
 
     <string name="quiz">Quiz</string>
     <string name="quiz_in_bisaya">Quiz</string>
+
+    <!-- Start Lesson 1 - Paragraph -->
+    <string name="daghan"><u>Daghan</u></string>
+    <string name="upat"><u>Upat</u></string>
+    <string name="duha"><u>Duha</u></string>
+    <string name="tulo"><u>Tulo</u></string>
+    <string name="utanon"><u>utanon</u></string>
+    <string name="estasyon"><u>estasyon</u></string>
+    <string name="gatas"><u>gatas</u></string>
+    <string name="ang"><u>ang</u></string>
+    <string name="ang_mga"><u>ang mga</u></string>
+    <!-- End Lesson 1 - Paragraph -->
+
+    <!-- Start Lesson 2 - Paragraph -->
+    <string name="sapatos"><u>Sapatos</u></string>
+    <string name="luwag"><u>Luwag</u></string>
+    <string name="libro"><u>Libro</u></string>
+    <string name="sanina"><u>Sanina</u></string>
+    <string name="gamit_pang_luto"><u>Gamit pang luto (Asin, Asukar, ug uban pa.)</u></string>
+
+    <string name="tulo_ka_takos"><u>Tulo ka takos</u></string>
+    <string name="unom_ka_sako"><u>Unom ka sako</u></string>
+    <string name="pito_ka_botelya"><u>Pito ka botelya</u></string>
+    <string name="lima_ka_kilo"><u>Lima ka kilo</u></string>
+    <string name="duha_ka_litro"><u>Duha ka litro</u></string>
+
+    <string name="asin"><u>Asin</u></string>
+    <string name="humay"><u>Humay</u></string>
+    <string name="suka"><u>Suka</u></string>
+    <string name="bugas"><u>Bugas</u></string>
+    <string name="tubig"><u>Tubig</u></string>
+    <!-- End Lesson 2 - Paragraph -->
+
+    <!-- Start Lesson 3 - Paragraph -->
+    <string name="bangko"><u>bangko</u></string>
+    <string name="nakahanay"><u>nakahan-ay</u></string>
+    <string name="makita"><u>makita</u></string>
+    <string name="magunitan"><u>magunitan</u></string>
+    <string name="konkreto"><u>konkreto</u></string>
+    <!-- End Lesson 3 - Paragraph -->
+
+    <!-- Start Lesson 3 - Paragraph -->
+    <string name="ang_imong_tubag"><u>Ang imong tubag kay usa ka pananglitan sa ngalan nga dili konkreto.</u></string>
+    <string name="dili_makita"><u>dili makita, </u></string>
+    <string name="masimhot"><u>masimhot, mabatian,</u></string>
+    <string name="matilawan"><u>matilawan, ug madungog. </u></string>
+    <string name="panghitabo"><u>panghitabo </u></string>
+    <string name="pamatasan"><u>pamatasan.</u></string>
+    <!-- End Lesson 3 - Paragraph -->
+
+    <!-- Start Lesson 5 - Paragraph -->
+    <string name="rina"><u>Rina</u></string>
+    <string name="kwarto"><u>Kwarto</u></string>
+    <string name="samtang_nagatuon"><u>samtang nagatuon siya sa iyang mga leksiyon</u></string>
+    <!-- End Lesson 5 - Paragraph -->
+
+    <!-- Start Reading Drills 2 - Paragraph -->
+    <string name="title_rd_2">Nganong Gidaladala ni Bao iyang balay</string>
+    <string name="title_rd_2_english">Why Does Bao Always Bring His home?</string>
+
+    <string name="subtitle_rd_2">Gisaysay ni: Cindy Velasquez</string>
+    <string name="subtitle_rd_2_english">Explained by: Cindy Velasquez</string>
+
+    <string name="detail_1_rd_2">Sa unang panahon ang bao nag puyo sa baybayon. Matag buntag, mo lakaw siya aron mangita og pagkaon, ug matag gabii, mouli siya sa iyang balay.</string>
+    <string name="detail_1_rd_2_english">Once upon a time, the turtle lived on a seashore. Every morning he goes to find food and every night he goes back home.</string>
+
+    <string name="detail_2_rd_2">Usa ka adlaw, naay ni abot nga dako nga bagyo, gi andam na ni Boboy kuwaknit, Alisa aluhipan, Maria himongaan, Morga ilaga, ug Dodong kabaw ang ilang mga balay.</string>
+    <string name="detail_2_rd_2_english">One day, there was a big storm coming. Boboy kuwaknit, Alisa aluhipan, Maria himongaan, Morga ilaga, ug Dodong kabaw prepared their houses.</string>
+
+    <string name="detail_3_rd_2">Apan ang balay ni Bao, gidala sa kusog nga hangin . “ Ang akong balay, palihog iuli,” sampit niya sa hangin. Apan wala gyod ni giuli sa hangin.</string>
+    <string name="detail_3_rd_2_english">But the house of Bao is tossed by the strong wind. “Please give back my house” He asked the wind, but the wind never returned his house.</string>
+
+    <string name="detail_4_rd_2">Nihilak si Bao kay wala na siyay balay. “Unsaon na ni nako ron?” Padayon ug hilak si Bao. Sa sunod nga adlaw, naghimo si Bao ug bag-ong balay nga layo na sa baybayon. Usa ka gabii sa iyang pag-uli sa iyang balay. Nakit-an ni Bao nga nasunog na ang iyang  balay tungod sa aninipot nga si Anya.</string>
+    <string name="detail_4_rd_2_english">Bao cried for losing his house. “What should I do now?” Bao continues to cry. On  the next day, Bao built a new house away from the seashore. One night when Bao returned to his house, he witnessed his house burning because of Anya the firefly.</string>
+
+    <string name="detail_5_rd_2">“Ang akong balay, nasunog!” Siyagit ni Bao apan na sunog na kining tanan. Sige na lang ug hilak si Bao tibuok gabii. Niduol kaniya si Anya aninipot, niingon siya: “Bao, pasayloa ko, nasunog nako ang imong balay. Wala nako tuyoa.”</string>
+    <string name="detail_5_rd_2_english">“My house is burning!” Bao shouted but everything was burned. Bao cried all night, and Anya the firefly approached him and said: “Bao, I’m sorry, I burned down your house. I didn’t mean to.”</string>
+
+    <string name="detail_6_rd_2">“Gipasaylo na tika Anya, Sige lang maghimo lang ako ug bag-o nga balay.” Tubag ni Bao. Apan naguol gyud si Bao. Kabalo siya nga maglisod na siya og buhat og bag-ong balay sa sulod sa isa ka semana. Ni adto si Bao sa iyang higala nga si Lolo Manu, ang tigulang unggoy. Mangayo siya og tambag.</string>
+    <string name="detail_6_rd_2_english">“I forgive you Anya, It’s okay I’ll just build a new house.” Bao replied. But Bao is still really sad. He knew that he would have a hard time building a new house in just a week. Bao went to his friend Lolo Manu, the old monkey To ask for some advice.</string>
+
+    <string name="detail_7_rd_2">“Lolo Manu, maayong buntag!” Sampit ni Bao. “Bao ni bisita man lagi ka? Unsa man unta?” Pangutana ni Lolo Manu.</string>
+    <string name="detail_7_rd_2_english">“Lolo Manu, Good morning!” Bao said. “Bao what brings you here? What do you need?” Lolo Manu asked.</string>
+
+    <string name="detail_8_rd_2">Dayon gisultian ni Bao si Lolo Manu sa iyang kahimtang. Sa mga nahitabo niya ug sa iyang balay.</string>
+    <string name="detail_8_rd_2_english">Then Bao shares his situation to Lolo Manu. Of everything that happened to him and to his house.</string>
+
+    <string name="detail_9_rd_2">“Kon mao na Bao, mas maayo nga dad-a nalang kanunay ang imong balay,” \n“Dad-on akong balay?” \n“Dad-a lang siya kanunay aron dili naka maghunahuna.” \n“Sakto ka Lolo Manu, Daghang salamat!”</string>
+    <string name="detail_9_rd_2_english">“If that so Bao, it’s better if you bring your house with you,” \n“Bring my house?” \n“Just always bring it, so that you will not think of it always.” \n“You’re right Lolo Manu, Thank you so much!”</string>
+
+    <string name="detail_10_rd_2">Sukad ato kanunay na nga malipayon si Bao. Kanunay na pod niyang gidaladala iyang balay.</string>
+    <string name="detail_10_rd_2_english">Since then Bao has always been happy. And he always brings his house with him.</string>
+    <!-- End Reading Drills - Paragraph -->
+
+    <!-- Start Reading Drills 3 - Paragraph -->
+    <string name="title_rd_3">Ang iro ni Kiko</string>
+    <string name="title_rd_3_english">The dog of Kiko</string>
+
+    <string name="subtitle_rd_3">Gisulat ni: Dalia P. Renomeron</string>
+    <string name="subtitle_rd_3_english">Written by: Dalia P. Renomeron</string>
+
+    <string name="detail_1_rd_3">Si Kiko adunay usa ka iro. Blacky ang ngalansa iyang iro. Itom ang kolor sa iyang balahibo, tambokon, abtikon, ug buotan.</string>
+    <string name="detail_1_rd_3_english">Kiko has a dog. Blacky is the name of his dog. His hair is black, fat, active, and kind.</string>
+
+    <string name="detail_2_rd_3">Kada sayo sa buntag kon way klase, moadto si Kiko sa ilang humayan ug mouban gayod kini si Blacky kay motabang man pagpamugaw sa mga langgam nga mangaon sa mga bunga sa ilang humayan.</string>
+    <string name="detail_2_rd_3_english">Every early morning when there is no class, Kiko goes to their  paddy field and Blacky will definitely go with him for it also helps to scare the birds who eats the fruits of their paddy.</string>
+
+    <string name="detail_3_rd_3">Usa ka buntag niana , samtang padulong na si Kiko ug ang iyang iro pauli sa ilang balay, nakakita si Blacky ug duha ka dako nga halas nga mipadulong na ni Kiko. Wala kabantay si Kiko kay naghangad- hangad kini samtang nagalakaw sa dalan.</string>
+    <string name="detail_3_rd_3_english">One morning, as Kiko and his dog was on his way home to their house, Blacky saw two large snakes on its way to Kiko. Kiko never sees it coming because he is looking above while walking in the road. What did Blacky do, Blacky barks loudly watching the two large snakes.</string>
+
+    <string name="detail_4_rd_3">Unsa ang gibuhat ni Blacky, mi aw aw kini pagkusog nga naglantaw sa duha ka halas. Natingala si Kiko kon kinsa ang giusig sa iyang iro. Nakita kini ni Kiko nga nagpadulong niya ang duha ka halas, dali- dali sila ug panagan ngadto sa may hawan nga dapit.</string>
+    <string name="detail_4_rd_3_english">Kiko wondered who his dog was chasing. Kiko saw the two snakes heading towards him. So, they ran fast to the open field.</string>
+
+    <string name="detail_5_rd_3">Wala patya ni Kiko ang mga halas kay dako kini ug tabang sa ilang humayan kay mangaon man kini ug mga ilaga nga mangaon usab sa bunga sa ilang Kahumayan.</string>
+    <string name="detail_5_rd_3_english">Kiko didn\'t kill the snakes because they were big and it helps their paddy, because it fed with rodents that also eat the fruits of their Paddy.</string>
+
+    <string name="detail_6_rd_3">Nagpasalamat si Kiko sa iyang iro kay nakasalbar kini sa iyang kinabuhi. Sukad niadto kanunay na gayod mouban si Blacky ni Kiko ngadto sa ilang humayan.</string>
+    <string name="detail_6_rd_3_english">Kiko thanked his dog for It saved his life. And Since then Blacky is always with Kiko in their paddy fields.</string>
+    <!-- End Reading Drills 3 - Paragraph -->
+
+    <!-- Start Reading Drills 4 - Paragraph -->
+    <string name="title_rd_4">Ang Dili Mahigalaon nga Suba</string>
+    <string name="title_rd_4_english">The Unfriendly River</string>
+
+    <string name="subtitle_rd_4">Tagasulat: Youth for Seva</string>
+    <string name="subtitle_rd_4_english">Author: Youth for Seva</string>
+
+    <string name="detail_1_rd_4">Kaniadto may suba. Kini nga suba dili mahigalaon ug mingaw. Ang suba dili makahinumdom kon kanus-a siya nakahukom nga dili na siya gusto nga mag-antos sa bisan unsa o bisan kinsa. Nagpuyo siya nga nag-inusara, nagdumili sa pagpaambit sa iyang tubig sa bisan unsang isda, tanum o hayop. Ug mao nga ang iyang kinabuhi nagpadayon nga masulub-on ug napuno sa kamingaw, sulod sa daghang mga siglo.Usa ka adlaw, usa ka gamay nga batang babaye nga adunay usa ka panaksan nga goldfish miadto sa tampi niini nga suba. Sa panaksan nagpuyo si Scamp, ang iyang paboritong gamay nga isda. Ang babaye hapit na mobalhin sa laing nasud, ug dili niya madala si Scamp uban niya.</string>
+    <string name="detail_1_rd_4_english">Once upon a time there was a river. This river was rather unfriendly and lonesome. The river could not remember how long ago he had decided that he no longer wanted to put up with anything or anyone. He lived alone, refusing to share his water with any fish, plant or animal. And so his life went on, sadly and filled with loneliness, for many centuries.One day, a little girl with a goldfish bowl came to the bank of this river. In the bowl lived Scamp, her favourite little fish. The girl was about to move to another country, and she wouldn\'t be able to take Scamp with her. So she had decided to give Scamp his freedom.</string>
+
+    <string name="detail_2_rd_4">Busa nakahukom siya nga ihatag kang Scamp ang iyang kagawasan.Sa pagkahulog ni Scamp sa suba, gibati dayon niya ang kamingaw sa suba. Si Scamp misulay sa pagpakigsulti sa suba, apan ang suba misulti kang Scamp sa pagpalayo. Karon, si Scamp usa ka malipayon nga gamay nga isda, ug dili siya dali nga mohunong. Nangutana siya ug nangutana, milangoy ug milangoy, ug sa katapusan nagsugod siya sa paglukso sa tubig.</string>
+    <string name="detail_2_rd_4_english">When Scamp fell into the river, he immediately felt the river\'s loneliness. Scamp tried talking to the river, but the river told Scamp to go away. Now, Scamp was a very happy little fish, and he wasn\'t going to give up so easily. He asked and asked, swam and swam, and finally he started jumping in and out of the water.</string>
+
+    <string name="detail_3_rd_4">Pagkataudtaod, kini nagbutang sa suba sa usa ka maayo nga kahimtang nga nagsugod siya sa pagpakigsulti kay Scamp. Ang suba migahin nianang gabhiona sa paghunahuna kon unsa ka lingaw nga adunay mga higala, ug unsaon daghan ang iyang gimingaw nga wala sila. Gipangutana niya ang iyang kaugalingon ngano nga wala pa niya sila, apan dili siya makahinumdom. Apan, sa paghinumdom sa kaguol ug kamingaw nga iyang gibati sulod sa daghang katuigan, ang suba nakaamgo nga bisan kung usahay medyo dili kombenyente o dili komportable, kanunay nga mas maayo adunay mga higala ug maningkamot nga magmalipayon.</string>
+    <string name="detail_3_rd_4_english">After a while, this put the river in such a good mood that he started talking to Scamp. The river spent that night thinking about how much fun it was to have friends, and how much he had missed by not having them. He asked himself why he had never had them, but he couldn\'t remember. But, remembering how sad and lonely he had felt for so many years, the river realised that although it may sometimes be a bit inconvenient or uncomfortable, it was always better to have friends and to try to be happy.</string>
+    <!-- End Reading Drills 4 - Paragraph -->
+
+    <!-- Start Reading Drills 5 - Paragraph -->
+    <string name="title_rd_5">Si Tomtom ug si Muning</string>
+    <string name="title_rd_5_english">Tomtom and Muning</string>
+
+    <string name="subtitle_rd_5">Tagasulat: Kanchan Bannerjee</string>
+    <string name="subtitle_rd_5_english">Author: Kanchan Bannerjee</string>
+
+    <string name="detail_1_rd_5">Akong itoy si Tomtom.</string>
+    <string name="detail_1_rd_5_english">My puppy is Tomtom.</string>
+
+    <string name="detail_2_rd_5">Gimahal nako kaayo si Tomtom.</string>
+    <string name="detail_2_rd_5_english">I love Tomtom so much.</string>
+
+    <string name="detail_3_rd_5">kini si Rohan. Si Rohan ang akong suod nga higala.</string>
+    <string name="detail_3_rd_5_english">This is Rohan. Rohan is my best friend.</string>
+
+    <string name="detail_4_rd_5">Anaa siya sa akong klase.</string>
+    <string name="detail_4_rd_5_english">He’s in the class with me.</string>
+
+    <string name="detail_5_rd_5">Adunay dakong iring si Rohan nga gitawag og Muning.</string>
+    <string name="detail_5_rd_5_english">Rohan has a big cat and he named it Muning.</string>
+
+    <string name="detail_6_rd_5">Kanunay siyang nasuko.</string>
+    <string name="detail_6_rd_5_english">It’s always angry.</string>
+
+    <string name="detail_7_rd_5">Si Tomtom ug ako kanunay nga mopalayo kang Muning.</string>
+    <string name="detail_7_rd_5_english">Tomtom and I always keep our distance to Muning.</string>
+
+    <string name="detail_8_rd_5">Gitawag namo siya og Muning Tigre.</string>
+    <string name="detail_8_rd_5_english">We call him Muning the Tiger.</string>
+    <!-- End Reading Drills 5 - Paragraph -->
 </resources>

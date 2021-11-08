@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtLesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagtulun-an 1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:id="@+id/txtBodyTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngalan nga Nagapakita og Kadaghanon"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:layout_below="@+id/layoutTitle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagtulun-an:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mga Makalingaw Nako"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTitle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:layout_below="@+id/layoutTitle2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I. Unang hisgutan"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unsa ang mga Ngalan?"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ang mga Ngalan kay butang, tawo, hayop o lugar"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pananglitan:"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Butang:"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lapis, libro, pisara, bangko, lamesa, kahon"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tawo:"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="klasmet, bata, magtutudlo"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hayop:"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="iro, langgam, isda"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pagkaon:"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="utan, mais, lechon, lugaw, gatas, kape"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lugar:"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cebu, manila, eskwelahan, bukid"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTitle4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:layout_below="@+id/layoutTitle3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="II. Ikaduhang hisgutan"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nag hisgut ug kadaghanon"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mga ngalan nga ma ihap ug mga ngalan nga daghan"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pananglitan:"
+            android:textSize="12sp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/daghan"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ang mga tawo"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/upat"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ka tawo"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/upat"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ka manok"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/duha"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ka babaye"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/duha"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ka lalaki"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tulo"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ka paso"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mga"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/utanon"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mga"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estasyon"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ang"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/montserrat_medium"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gatas"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gi inum"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTitle5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:layout_below="@+id/layoutTitle4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="III. Ikatulong hisgutan"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mga timailhan sa kadaghanon sa ngalan:"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ang"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ang"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ug"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ang_mga"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Ang"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ang"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gigamit kung ang gihisgutan usa lang."
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Ang"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ang_mga"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ginagamit kung daghan ang"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_medium"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ginahisgutan nga ngalan."
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="18dp"
+            android:fontFamily="@font/montserrat_medium"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pananglitan:"
+                android:textSize="12sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ang"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="4dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="bata kay nag lingkud."
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="2dp"
+                    android:fontFamily="@font/montserrat_medium"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sa bukid makuha"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/montserrat_medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ang mga"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="2dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="kahoy."
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="2dp"
+                    android:fontFamily="@font/montserrat_medium"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Si Roberto"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/montserrat_medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ang"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="2dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="nag butang sa bangko."
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="2dp"
+                    android:fontFamily="@font/montserrat_medium"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutTitle5"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/btnTakeQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Take Quiz"
+            android:padding="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="20sp"
+            android:background="@drawable/round_shape_btn"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_medium"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
