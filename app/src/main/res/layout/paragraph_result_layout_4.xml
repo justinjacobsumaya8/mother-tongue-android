@@ -50,49 +50,68 @@
                 android:text="@string/english"
                 android:textColor="@color/white"
                 android:textSize="13sp"
+                app:elevation="2dp"
                 android:fontFamily="@font/montserrat_medium"/>
 
         </RelativeLayout>
 
+        <LinearLayout
+            android:id="@+id/layoutNav2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutNav"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/title_rd_4"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <TextView
+                    android:id="@+id/txtSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/subtitle_rd_4"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_medium"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/reading_drills_1"/>
+
+        </LinearLayout>
+
     </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/layoutNavBg"
-        android:layout_marginTop="12dp"
-        android:padding="14dp">
-
-        <TextView
-            android:id="@+id/txtTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_rd_4"
-            android:textSize="16dp"
-            android:fontFamily="@font/montserrat_medium"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"/>
-
-        <TextView
-            android:id="@+id/txtSubTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/subtitle_rd_4"
-            android:textSize="16dp"
-            android:fontFamily="@font/montserrat_medium"
-            android:layout_marginTop="4dp"
-            android:gravity="center_horizontal"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/layoutTitle"
+        android:layout_below="@+id/layoutNavBg"
         android:layout_marginTop="12dp"
         android:padding="14dp">
 

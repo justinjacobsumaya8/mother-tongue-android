@@ -274,6 +274,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
         }
 
         public void setDetailsCebuano2(View view, Paragraph paragraph) {
+            ImageView image = (ImageView) view.findViewById(R.id.image);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
             TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
@@ -287,6 +288,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
             TextView txtDesc9 = (TextView) view.findViewById(R.id.txtDesc9);
             TextView txtDesc10 = (TextView) view.findViewById(R.id.txtDesc10);
 
+            Glide.with(view.getContext()).load(paragraph.getImage()).into(image);
             txtTitle.setText(getResources().getString(R.string.title_rd_2));
             txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_2));
             txtDesc1.setText(getResources().getString(R.string.detail_1_rd_2));
@@ -302,6 +304,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
         }
 
         public void setDetailsEnglish2(View view, Paragraph paragraph) {
+            ImageView image = (ImageView) view.findViewById(R.id.image);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
             TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
@@ -315,6 +318,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
             TextView txtDesc9 = (TextView) view.findViewById(R.id.txtDesc9);
             TextView txtDesc10 = (TextView) view.findViewById(R.id.txtDesc10);
 
+            Glide.with(view.getContext()).load(paragraph.getImage()).into(image);
             txtTitle.setText(getResources().getString(R.string.title_rd_2_english));
             txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_2_english));
             txtDesc1.setText(getResources().getString(R.string.detail_1_rd_2_english));
@@ -330,6 +334,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
         }
 
         public void setDetailsCebuano3(View view, Paragraph paragraph) {
+            ImageView image = (ImageView) view.findViewById(R.id.image);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
             TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
@@ -339,6 +344,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
             TextView txtDesc5 = (TextView) view.findViewById(R.id.txtDesc5);
             TextView txtDesc6 = (TextView) view.findViewById(R.id.txtDesc6);
 
+            Glide.with(view.getContext()).load(paragraph.getImage()).into(image);
             txtTitle.setText(getResources().getString(R.string.title_rd_3));
             txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_3));
             txtDesc1.setText(getResources().getString(R.string.detail_1_rd_3));
@@ -350,6 +356,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
         }
 
         public void setDetailsEnglish3(View view, Paragraph paragraph) {
+            ImageView image = (ImageView) view.findViewById(R.id.image);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
             TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
@@ -359,6 +366,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
             TextView txtDesc5 = (TextView) view.findViewById(R.id.txtDesc5);
             TextView txtDesc6 = (TextView) view.findViewById(R.id.txtDesc6);
 
+            Glide.with(view.getContext()).load(paragraph.getImage()).into(image);
             txtTitle.setText(getResources().getString(R.string.title_rd_3_english));
             txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_3_english));
             txtDesc1.setText(getResources().getString(R.string.detail_1_rd_3_english));
@@ -370,12 +378,14 @@ public class ParagraphResultActivity extends AppCompatActivity {
         }
 
         public void setDetailsCebuano4(View view, Paragraph paragraph) {
+            ImageView image = (ImageView) view.findViewById(R.id.image);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
             TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
             TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
             TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
 
+            Glide.with(view.getContext()).load(paragraph.getImage()).into(image);
             txtTitle.setText(getResources().getString(R.string.title_rd_4));
             txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_4));
             txtDesc1.setText(getResources().getString(R.string.detail_1_rd_4));
@@ -384,12 +394,14 @@ public class ParagraphResultActivity extends AppCompatActivity {
         }
 
         public void setDetailsEnglish4(View view, Paragraph paragraph) {
+            ImageView image = (ImageView) view.findViewById(R.id.image);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
             TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
             TextView txtDesc2 = (TextView) view.findViewById(R.id.txtDesc2);
             TextView txtDesc3 = (TextView) view.findViewById(R.id.txtDesc3);
 
+            Glide.with(view.getContext()).load(paragraph.getImage()).into(image);
             txtTitle.setText(getResources().getString(R.string.title_rd_4_english));
             txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_4_english));
             txtDesc1.setText(getResources().getString(R.string.detail_1_rd_4_english));
@@ -398,6 +410,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
         }
 
         public void setDetailsCebuano5(View view, Paragraph paragraph) {
+            ImageView image = (ImageView) view.findViewById(R.id.image);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
             TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
@@ -409,6 +422,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
             TextView txtDesc7 = (TextView) view.findViewById(R.id.txtDesc7);
             TextView txtDesc8 = (TextView) view.findViewById(R.id.txtDesc8);
 
+            Glide.with(view.getContext()).load(paragraph.getImage()).into(image);
             txtTitle.setText(getResources().getString(R.string.title_rd_5));
             txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_5));
             txtDesc1.setText(getResources().getString(R.string.detail_1_rd_5));
@@ -422,6 +436,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
         }
 
         public void setDetailsEnglish5(View view, Paragraph paragraph) {
+            ImageView image = (ImageView) view.findViewById(R.id.image);
             TextView txtTitle = (TextView) view.findViewById(R.id.txtTitle);
             TextView txtSubTitle = (TextView) view.findViewById(R.id.txtSubTitle);
             TextView txtDesc1 = (TextView) view.findViewById(R.id.txtDesc1);
@@ -433,6 +448,7 @@ public class ParagraphResultActivity extends AppCompatActivity {
             TextView txtDesc7 = (TextView) view.findViewById(R.id.txtDesc7);
             TextView txtDesc8 = (TextView) view.findViewById(R.id.txtDesc8);
 
+            Glide.with(view.getContext()).load(paragraph.getImage()).into(image);
             txtTitle.setText(getResources().getString(R.string.title_rd_5_english));
             txtSubTitle.setText(getResources().getString(R.string.subtitle_rd_5_english));
             txtDesc1.setText(getResources().getString(R.string.detail_1_rd_5_english));

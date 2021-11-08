@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Mother Tongue</string>
     <string name="app_name_2">Mobile Mother Tongue-Based Multilingual Education Application</string>
 
@@ -73,11 +73,13 @@
     <!-- End Lesson 5 - Paragraph -->
 
     <!-- Start Reading Drills 2 - Paragraph -->
-    <string name="title_rd_2">Nganong Gidaladala ni Bao iyang balay</string>
-    <string name="title_rd_2_english">Why Does Bao Always Bring His home?</string>
+    <string name="image_rd_2" tools:ignore="TypographyDashes">https://firebasestorage.googleapis.com/v0/b/mother–tongue-8f47b.appspot.com/o/reading_drills_images%2Fbao.jpg?alt=media&amp;token=28730acf-c4cb-417b-b837-9c3ab637e2e3</string>
 
-    <string name="subtitle_rd_2">Gisaysay ni: Cindy Velasquez</string>
-    <string name="subtitle_rd_2_english">Explained by: Cindy Velasquez</string>
+    <string name="title_rd_2">Nganong Gidaladala \nni Bao \niyang balay</string>
+    <string name="title_rd_2_english">Why Does Bao \nAlways Bring \nHis home?</string>
+
+    <string name="subtitle_rd_2">Gisaysay ni: \n<font fgcolor="#4c4c4c" size="15">Cindy Velasquez</font></string>
+    <string name="subtitle_rd_2_english">Explained by: \n<font fgcolor="#4c4c4c" size="15">Cindy Velasquez</font></string>
 
     <string name="detail_1_rd_2">Sa unang panahon ang bao nag puyo sa baybayon. Matag buntag, mo lakaw siya aron mangita og pagkaon, ug matag gabii, mouli siya sa iyang balay.</string>
     <string name="detail_1_rd_2_english">Once upon a time, the turtle lived on a seashore. Every morning he goes to find food and every night he goes back home.</string>
@@ -111,11 +113,13 @@
     <!-- End Reading Drills - Paragraph -->
 
     <!-- Start Reading Drills 3 - Paragraph -->
+    <string name="image_rd_3" tools:ignore="TypographyDashes">https://firebasestorage.googleapis.com/v0/b/mother-tongue-8f47b.appspot.com/o/reading_drills_images%2Fkiko.png?alt=media&amp;token=e45e956e-c621-42fa-89c2-76c815e3a0a0</string>
+
     <string name="title_rd_3">Ang iro ni Kiko</string>
     <string name="title_rd_3_english">The dog of Kiko</string>
 
-    <string name="subtitle_rd_3">Gisulat ni: Dalia P. Renomeron</string>
-    <string name="subtitle_rd_3_english">Written by: Dalia P. Renomeron</string>
+    <string name="subtitle_rd_3">Gisulat ni: \n<font fgcolor="#4c4c4c" size="15">Dalia P. Renomeron</font></string>
+    <string name="subtitle_rd_3_english">Written by: \n<font fgcolor="#4c4c4c" size="15">Dalia P. Renomeron</font></string>
 
     <string name="detail_1_rd_3">Si Kiko adunay usa ka iro. Blacky ang ngalansa iyang iro. Itom ang kolor sa iyang balahibo, tambokon, abtikon, ug buotan.</string>
     <string name="detail_1_rd_3_english">Kiko has a dog. Blacky is the name of his dog. His hair is black, fat, active, and kind.</string>
@@ -137,11 +141,13 @@
     <!-- End Reading Drills 3 - Paragraph -->
 
     <!-- Start Reading Drills 4 - Paragraph -->
-    <string name="title_rd_4">Ang Dili Mahigalaon nga Suba</string>
+    <string name="image_rd_4" tools:ignore="TypographyDashes">https://firebasestorage.googleapis.com/v0/b/mother–tongue-8f47b.appspot.com/o/reading_drills_images%2Funfriendlyriver.jpg?alt=media&amp;token=e17b5d03-fd29-42ff-86f0-eda3883dd402</string>
+
+    <string name="title_rd_4">Ang Dili Mahigalaon \nnga Suba</string>
     <string name="title_rd_4_english">The Unfriendly River</string>
 
-    <string name="subtitle_rd_4">Tagasulat: Youth for Seva</string>
-    <string name="subtitle_rd_4_english">Author: Youth for Seva</string>
+    <string name="subtitle_rd_4">Tagasulat: \n<font fgcolor="#4c4c4c" size="15">Youth for Seva</font></string>
+    <string name="subtitle_rd_4_english">Author: \n<font fgcolor="#4c4c4c" size="15">Youth for Seva</font></string>
 
     <string name="detail_1_rd_4">Kaniadto may suba. Kini nga suba dili mahigalaon ug mingaw. Ang suba dili makahinumdom kon kanus-a siya nakahukom nga dili na siya gusto nga mag-antos sa bisan unsa o bisan kinsa. Nagpuyo siya nga nag-inusara, nagdumili sa pagpaambit sa iyang tubig sa bisan unsang isda, tanum o hayop. Ug mao nga ang iyang kinabuhi nagpadayon nga masulub-on ug napuno sa kamingaw, sulod sa daghang mga siglo.Usa ka adlaw, usa ka gamay nga batang babaye nga adunay usa ka panaksan nga goldfish miadto sa tampi niini nga suba. Sa panaksan nagpuyo si Scamp, ang iyang paboritong gamay nga isda. Ang babaye hapit na mobalhin sa laing nasud, ug dili niya madala si Scamp uban niya.</string>
     <string name="detail_1_rd_4_english">Once upon a time there was a river. This river was rather unfriendly and lonesome. The river could not remember how long ago he had decided that he no longer wanted to put up with anything or anyone. He lived alone, refusing to share his water with any fish, plant or animal. And so his life went on, sadly and filled with loneliness, for many centuries.One day, a little girl with a goldfish bowl came to the bank of this river. In the bowl lived Scamp, her favourite little fish. The girl was about to move to another country, and she wouldn\'t be able to take Scamp with her. So she had decided to give Scamp his freedom.</string>
@@ -154,11 +160,13 @@
     <!-- End Reading Drills 4 - Paragraph -->
 
     <!-- Start Reading Drills 5 - Paragraph -->
-    <string name="title_rd_5">Si Tomtom ug si Muning</string>
-    <string name="title_rd_5_english">Tomtom and Muning</string>
+    <string name="image_rd_5" tools:ignore="TypographyDashes">https://firebasestorage.googleapis.com/v0/b/mother–tongue-8f47b.appspot.com/o/reading_drills_images%2Ftomtom_and_muning.jpg?alt=media&amp;token=b8a28827-93ad-4379-93c4-2e87167e8971</string>
 
-    <string name="subtitle_rd_5">Tagasulat: Kanchan Bannerjee</string>
-    <string name="subtitle_rd_5_english">Author: Kanchan Bannerjee</string>
+    <string name="title_rd_5">Si Tomtom ug \nsi Muning</string>
+    <string name="title_rd_5_english">Tomtom and \nMuning</string>
+
+    <string name="subtitle_rd_5">Tagasulat: \n<font fgcolor="#4c4c4c" size="15">Kanchan Bannerjee</font></string>
+    <string name="subtitle_rd_5_english">Author: \n<font fgcolor="#4c4c4c" size="15">Kanchan Bannerjee</font></string>
 
     <string name="detail_1_rd_5">Akong itoy si Tomtom.</string>
     <string name="detail_1_rd_5_english">My puppy is Tomtom.</string>

@@ -363,8 +363,8 @@ public class QuizActivity extends AppCompatActivity {
                                 {
                                     wrong++;
 
-                                    btnChoice2.setBackgroundColor(Color.parseColor("#BA3F37"));
-                                    btnChoice2.setTextColor(Color.WHITE);
+//                                    btnChoice2.setBackgroundColor(Color.parseColor("#BA3F37"));
+//                                    btnChoice2.setTextColor(Color.WHITE);
 
 //                                    txtEmoji.setText("Sorry Wrong...");
                                     txtEmoji.setTextColor(Color.RED);
