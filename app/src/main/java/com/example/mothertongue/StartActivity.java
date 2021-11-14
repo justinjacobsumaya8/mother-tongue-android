@@ -17,6 +17,7 @@ public class StartActivity extends AppCompatActivity {
 
     private Button btnStart;
     private ImageView imageView;
+    private TextView txtExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,19 @@ public class StartActivity extends AppCompatActivity {
                 mp.start();
                 Intent myIntent = new Intent(StartActivity.this, LoginActivity.class);
                 StartActivity.this.startActivity(myIntent);
+            }
+        });
+
+        txtExit = (TextView) findViewById(R.id.txtExit);
+        txtExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//                android.os.Process.killProcess(android.os.Process.myPid());
+                Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+                homeIntent.addCategory( Intent.CATEGORY_HOME );
+                homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
             }
         });
     }

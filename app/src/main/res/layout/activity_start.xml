@@ -92,6 +92,22 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Do you want to leave? "/>
+
+                <TextView
+                    android:id="@+id/txtExit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="Exit"/>
+
+
             </LinearLayout>
         </RelativeLayout>
 
